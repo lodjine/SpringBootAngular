@@ -19,19 +19,19 @@ public class EntrepotWService {
 	private IEntrepotDao entrepotDao;
 
 	@RequestMapping(value = "/entrepots", method = RequestMethod.POST)
-	public Entrepot saveProduit(@RequestBody Entrepot entrepot) {
+	public Entrepot saveEntrepot(@RequestBody Entrepot entrepot) {
 		entrepotDao.save(entrepot);
 		return entrepot;
 	}
 
 	@RequestMapping(value = "/entrepots", method = RequestMethod.PUT)
-	public Entrepot updateProduit(@RequestBody Entrepot entrepot) {
+	public Entrepot updateEntrepot(@RequestBody Entrepot entrepot) {
 		entrepotDao.save(entrepot);
 		return entrepot;
 	}
 
 	@RequestMapping(value = "/entrepots", method = RequestMethod.GET)
-	public List<Entrepot> getEntrepot() {
+	public List<Entrepot> getEntrepots() {
 		return entrepotDao.findAll();
 	}
 
@@ -40,7 +40,7 @@ public class EntrepotWService {
 		return entrepotDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/entrepots/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/entrepots/{id}", method = RequestMethod.DELETE)
 	public boolean deleteEntrepot(@PathVariable Long id) {
 		entrepotDao.delete(id);
 		return true;

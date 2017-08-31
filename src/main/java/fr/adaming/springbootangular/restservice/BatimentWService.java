@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.adaming.springbootangular.dao.IBatimentDao;
-import fr.adaming.springbootangular.dao.IProduitDao;
 import fr.adaming.springbootangular.model.Batiment;
-import fr.adaming.springbootangular.model.Produit;
 
 @RestController
 public class BatimentWService {
@@ -27,7 +25,7 @@ public class BatimentWService {
 	}
 	
 	@RequestMapping(value="/batiments", method=RequestMethod.PUT)
-	public Batiment UpdateBatiment(@RequestBody Batiment batiment){
+	public Batiment updateBatiment(@RequestBody Batiment batiment){
 		batimentDao.save(batiment);
 		return batiment;
 	}

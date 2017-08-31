@@ -38,7 +38,7 @@ public class FournisseurWService {
 	
 	
 	@RequestMapping(value="/fournisseurs", method=RequestMethod.GET)
-	public List<Fournisseur> getFournisseur(){
+	public List<Fournisseur> getFournisseurs(){
 		return fournisseurDao.findAll();
 	}
 	
@@ -48,7 +48,7 @@ public class FournisseurWService {
 		return fournisseurDao.findOne(id);
 	}
 	
-	@RequestMapping(value="/fournisseurs/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/fournisseurs/{id}", method=RequestMethod.DELETE)
 	public boolean deleteFournisseur(@PathVariable Long id){
 		fournisseurDao.delete(id);
 		 return true;

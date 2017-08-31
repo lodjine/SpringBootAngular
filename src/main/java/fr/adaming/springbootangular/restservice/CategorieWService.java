@@ -31,16 +31,16 @@ public class CategorieWService {
 	}
 
 	@RequestMapping(value = "/categories", method = RequestMethod.GET)
-	public List<Categorie> getCategorie() {
+	public List<Categorie> getCategories() {
 		return categorieDao.findAll();
 	}
 
 	@RequestMapping(value = "/categories/{id}", method = RequestMethod.GET)
-	public Categorie getStock(@PathVariable Long id) {
+	public Categorie getCategorie(@PathVariable Long id) {
 		return categorieDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/categories/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
 	public boolean deleteCategorie(@PathVariable Long id) {
 		categorieDao.delete(id);
 		return true;

@@ -32,7 +32,7 @@ public class StockWService {
 	}
 
 	@RequestMapping(value = "/stocks", method = RequestMethod.GET)
-	public List<Stock> getStock() {
+	public List<Stock> getStocks() {
 		return stockDao.findAll();
 	}
 
@@ -41,7 +41,7 @@ public class StockWService {
 		return stockDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/stocks/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/stocks/{id}", method = RequestMethod.DELETE)
 	public boolean deleteStock(@PathVariable IdStock id) {
 		stockDao.delete(id);
 		return true;

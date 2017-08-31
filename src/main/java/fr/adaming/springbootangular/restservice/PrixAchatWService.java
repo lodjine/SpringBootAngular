@@ -26,13 +26,13 @@ public class PrixAchatWService {
 	}
 
 	@RequestMapping(value = "/prix_achats", method = RequestMethod.PUT)
-	public PrixAchat updateStock(@RequestBody PrixAchat prixAchat) {
+	public PrixAchat updatePrixAchat(@RequestBody PrixAchat prixAchat) {
 		prixAchatDao.save(prixAchat);
 		return prixAchat;
 	}
 
 	@RequestMapping(value = "/prix_achats", method = RequestMethod.GET)
-	public List<PrixAchat> getPrixAchat() {
+	public List<PrixAchat> getPrixAchats() {
 		return prixAchatDao.findAll();
 	}
 
@@ -41,7 +41,7 @@ public class PrixAchatWService {
 		return prixAchatDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/prix_achats/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/prix_achats/{id}", method = RequestMethod.DELETE)
 	public boolean deletePrixAchat(@PathVariable IdPrixAchat id) {
 		prixAchatDao.delete(id);
 		return true;
