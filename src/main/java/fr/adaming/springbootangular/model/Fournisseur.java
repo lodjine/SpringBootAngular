@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Fournisseur {
@@ -19,7 +20,7 @@ public class Fournisseur {
 	private String numTel;
 	private String adresse;
 	private List<Entrepot> listEntrepot;
-	private List<Produit> listProduit;
+	private List<PrixAchat> listPrixAchat;
 	
 	public Fournisseur() {
 		
@@ -89,15 +90,14 @@ public class Fournisseur {
 		this.listEntrepot = listEntrepot;
 	}
 
-	@ManyToMany(mappedBy="listFournisseur")
-	public List<Produit> getListProduit() {
-		return listProduit;
+	@OneToMany
+	public List<PrixAchat> getListPrixAchat() {
+		return listPrixAchat;
 	}
 
-	public void setListProduit(List<Produit> listProduit) {
-		this.listProduit = listProduit;
+	public void setListPrixAchat(List<PrixAchat> listPrixAchat) {
+		this.listPrixAchat = listPrixAchat;
 	}
-	
 	
 
 }
