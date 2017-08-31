@@ -90,7 +90,7 @@ public class Fournisseur {
 		this.listEntrepot = listEntrepot;
 	}
 
-	@OneToMany
+	@OneToMany(mappedBy="fournisseur")
 	public List<PrixAchat> getListPrixAchat() {
 		return listPrixAchat;
 	}
