@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-HELLO
+<script src="angular.min.js"></script>
+<script src="angular-ui-router.min.js"></script>
+<script src="pays.js"></script>
+
+<body ng-app="routerApp">
+
+<p><a ui-sref="home">Main</a></p>
+
+<a ui-sref="londres">Londres</a>
+<a ui-sref="paris">Paris</a>
+
+
+<div ui-view></div>
+
 </body>
 </html>
