@@ -45,7 +45,7 @@ public class Categorie {
 		this.categorie = categorie;
 	}
 
-	@ManyToMany
+	@ManyToMany(mappedBy="listCategorie")
 	public List<Produit> getListProduit() {
 		return listProduit;
 	}
