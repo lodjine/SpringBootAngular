@@ -3,8 +3,11 @@ package fr.adaming.springbootangular.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+
+@Entity
 public class PrixAchat {
 
 	private IdPrixAchat idPrixAchat;
