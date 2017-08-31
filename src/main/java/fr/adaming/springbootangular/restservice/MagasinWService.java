@@ -30,7 +30,7 @@ public class MagasinWService {
 		return magasin;
 	}
 	
-	@RequestMapping(value="/produits", method=RequestMethod.GET)
+	@RequestMapping(value="/magasins", method=RequestMethod.GET)
 	public List<Magasin> getMagasins(){
 		return magasinDao.findAll();
 	}
