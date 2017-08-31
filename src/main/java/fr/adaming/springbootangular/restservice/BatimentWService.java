@@ -30,7 +30,7 @@ public class BatimentWService {
 		return batiment;
 	}
 	
-	@RequestMapping(value="/batiments", method=RequestMethod.PUT)
+	@RequestMapping(value="/batiments", method=RequestMethod.GET)
 	public List<Batiment> getBatiments(){
 		return batimentDao.findAll();
 	}
