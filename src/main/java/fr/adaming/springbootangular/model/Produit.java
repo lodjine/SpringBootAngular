@@ -16,11 +16,10 @@ public class Produit {
 	
 	private Long idProduit;
 	private String nomProduit;
-	private Long prixAchat;
 	private Long prixVente;
 	private String descriptif;
 	private String marque;
-	private List<Fournisseur> listFournisseur;
+	private List<PrixAchat> listPrixAchat;
 	private List<Categorie> listCategorie;
 	private List<Stock> listStock;
 
@@ -45,15 +44,6 @@ public class Produit {
 
 	public void setNomProduit(String nomProduit) {
 		this.nomProduit = nomProduit;
-	}
-
-	@Column
-	public Long getPrixAchat() {
-		return prixAchat;
-	}
-
-	public void setPrixAchat(Long prixAchat) {
-		this.prixAchat = prixAchat;
 	}
 
 	@Column
@@ -83,13 +73,13 @@ public class Produit {
 		this.marque = marque;
 	}
 
-	@ManyToMany
-	public List<Fournisseur> getListFournisseur() {
-		return listFournisseur;
+	@OneToMany (cascade = CascadeType.ALL)
+	public List<PrixAchat> getListPrixAchat() {
+		return listPrixAchat;
 	}
 
-	public void setListFournisseur(List<Fournisseur> listFournisseur) {
-		this.listFournisseur = listFournisseur;
+	public void setListPrixAchat(List<PrixAchat> listPrixAchat) {
+		this.listPrixAchat = listPrixAchat;
 	}
 
 	@ManyToMany
