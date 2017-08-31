@@ -21,6 +21,8 @@ public class Stock {
 	private Batiment batiment;
 	
 	public Stock() {
+		IdStock idS = new IdStock(produit.getIdProduit(), batiment.getIdBatiment());
+		this.idStock = idS;
 	}
 	
 	
