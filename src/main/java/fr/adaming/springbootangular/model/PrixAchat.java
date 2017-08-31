@@ -1,7 +1,9 @@
 package fr.adaming.springbootangular.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
+import javax.persistence.ManyToOne;
 
 public class PrixAchat {
 
@@ -39,7 +41,7 @@ public class PrixAchat {
 		this.prixAchat = prixAchat;
 	}
 
-	@Column
+	@ManyToOne(cascade=CascadeType.ALL)
 	public Produit getProduit() {
 		return produit;
 	}
@@ -48,7 +50,7 @@ public class PrixAchat {
 		this.produit = produit;
 	}
 
-	@Column
+	@ManyToOne(cascade=CascadeType.ALL)
 	public Fournisseur getFournisseur() {
 		return fournisseur;
 	}
