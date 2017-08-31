@@ -7,7 +7,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 
-
+@Entity
 @DiscriminatorValue(value = "Magasin")
 public class Magasin extends Batiment {
 	
