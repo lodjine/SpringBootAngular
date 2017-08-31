@@ -73,7 +73,7 @@ public class Produit {
 		this.marque = marque;
 	}
 
-	@OneToMany (cascade = CascadeType.ALL)
+	@OneToMany (mappedBy="produit", cascade = CascadeType.ALL)
 	public List<PrixAchat> getListPrixAchat() {
 		return listPrixAchat;
 	}
@@ -91,7 +91,7 @@ public class Produit {
 		this.listCategorie = listCategorie;
 	}
 
-	@OneToMany (cascade = CascadeType.ALL)
+	@OneToMany (mappedBy="produit", cascade = CascadeType.ALL)
 	public List<Stock> getListStock() {
 		return listStock;
 	}
