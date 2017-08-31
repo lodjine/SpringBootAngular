@@ -72,5 +72,4 @@ public class Stock {
 		this.batiment = batiment;
 	}
 	
-	
 }
