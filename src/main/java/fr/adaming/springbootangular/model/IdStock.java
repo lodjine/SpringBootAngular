@@ -1,11 +1,18 @@
 package fr.adaming.springbootangular.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class IdStock {
+public class IdStock implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Long idP;
 	private Long idB;
 
