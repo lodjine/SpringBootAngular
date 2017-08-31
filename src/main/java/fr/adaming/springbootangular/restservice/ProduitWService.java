@@ -1,6 +1,9 @@
 package fr.adaming.springbootangular.restservice;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,9 +25,25 @@ public class ProduitWService {
 	}
 	
 	@RequestMapping(value="/produits", method=RequestMethod.PUT)
-	public Produit UpdateProduit(@RequestBody Produit produit){
+	public Produit updateProduit(@RequestBody Produit produit){
 		produitDao.save(produit);
 		return produit;
+	}
+	
+	@RequestMapping(value="/produits", method=RequestMethod.GET)
+	public List<Produit> getProduits(){
+		return produitDao.findAll();
+	}
+	
+	@RequestMapping(value="/produits/{id}", method=RequestMethod.GET)	
+	public Produit getProduit(@PathVariable Long id){
+		return produitDao.findOne(id);
+	}
+	
+	@RequestMapping(value="/produits/{id}", method=RequestMethod.DELETE)
+	public boolean deleteProduit(@PathVariable Long id){
+		produitDao.delete(id);
+		return true;
 	}
 
 }
