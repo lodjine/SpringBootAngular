@@ -38,13 +38,3 @@ app.controller('ProduitDetailCtrl', ['$scope', '$routeParams', 'ProduitFactory',
 
         $scope.produit = ProduitFactory.show({id: $routeParams.id});
     }]);
-
-app.controller('ProduitCreationCtrl', ['$scope', 'ProduitsFactory', '$location',
-    function ($scope, ProduitsFactory, $location) {
-
-        // callback for ng-click 'createProduit':
-        $scope.createProduit = function () {
-            ProduitsFactory.create($scope.produit);
-            $location.path('/produits');
-        }
-    }]);
