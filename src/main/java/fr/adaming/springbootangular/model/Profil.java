@@ -1,5 +1,6 @@
 package fr.adaming.springbootangular.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,7 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Profil {
+public class Profil implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	
 	private Long idProfil;
 	private String role;
@@ -46,6 +52,49 @@ public class Profil {
 
 	public void setListUser(List<User> listUser) {
 		this.listUser = listUser;
+	}
+
+	@Override
+	public String toString() {
+		return "Profil [" + (idProfil != null ? "idProfil=" + idProfil + ", " : "")
+				+ (role != null ? "role=" + role : "") + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idProfil == null) ? 0 : idProfil.hashCode());
+		result = prime * result + ((listUser == null) ? 0 : listUser.hashCode());
+		result = prime * result + ((role == null) ? 0 : role.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Profil other = (Profil) obj;
+		if (idProfil == null) {
+			if (other.idProfil != null)
+				return false;
+		} else if (!idProfil.equals(other.idProfil))
+			return false;
+		if (listUser == null) {
+			if (other.listUser != null)
+				return false;
+		} else if (!listUser.equals(other.listUser))
+			return false;
+		if (role == null) {
+			if (other.role != null)
+				return false;
+		} else if (!role.equals(other.role))
+			return false;
+		return true;
 	}
 
 }

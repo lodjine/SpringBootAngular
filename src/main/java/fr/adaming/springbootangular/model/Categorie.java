@@ -1,5 +1,6 @@
 package fr.adaming.springbootangular.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -10,8 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
-public class Categorie {
+public class Categorie implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Long idCategorie;
 	private String categorie;
 
@@ -54,4 +60,47 @@ public class Categorie {
 		this.listProduit = listProduit;
 	}
 
+	@Override
+	public String toString() {
+		return "Categorie [idCategorie=" + idCategorie + ", categorie=" + categorie + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((categorie == null) ? 0 : categorie.hashCode());
+		result = prime * result + ((idCategorie == null) ? 0 : idCategorie.hashCode());
+		result = prime * result + ((listProduit == null) ? 0 : listProduit.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Categorie other = (Categorie) obj;
+		if (categorie == null) {
+			if (other.categorie != null)
+				return false;
+		} else if (!categorie.equals(other.categorie))
+			return false;
+		if (idCategorie == null) {
+			if (other.idCategorie != null)
+				return false;
+		} else if (!idCategorie.equals(other.idCategorie))
+			return false;
+		if (listProduit == null) {
+			if (other.listProduit != null)
+				return false;
+		} else if (!listProduit.equals(other.listProduit))
+			return false;
+		return true;
+	}
+
+	
 }
