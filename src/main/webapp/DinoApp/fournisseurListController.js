@@ -1,8 +1,9 @@
-angular.module("routerApp").controller('fournisseurListController',
-		[ '$scope', 'fournisseurService', function($scope, fournisseurService) {
+angular.module("routerApp").controller('fournisseurListController', fournisseurListController);
+
+fournisseurListController.$inject= ['$scope', 'fournisseurService'];
+
+		function fournisseurListController($scope, fournisseurService) {
 			
-			var test=fournisseurService.query();
-			alert(test);
-		
+			$scope.fournisseurs=fournisseurService.query();
 			
-		} ]);
+		};

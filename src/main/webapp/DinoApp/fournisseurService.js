@@ -10,9 +10,7 @@
     function fournisseurService ($resource) {
     	
     	var resourceUrl =  '/fournisseurs/:id';
-    	return $resource(resourceUrl, {}, {
-    		query: { method: 'GET', isArray: true,resourceType:'json' }
-    	});
+    	return $resource(resourceUrl, {}, {});
     	
         
     }
