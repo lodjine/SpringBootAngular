@@ -15,5 +15,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl : 'produits.html',
 		controller : 'produitListController'
 	})
+	
+	.state('batiments', {
+		url : '/batiments',
+		templateUrl : 'batiments.html',
+		controller : 'batimentListController'
+	})
 
 });

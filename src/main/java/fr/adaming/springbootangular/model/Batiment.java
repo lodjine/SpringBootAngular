@@ -102,4 +102,13 @@ public class Batiment {
 		this.listStock = listStock;
 	}
 
+	@Override
+	public String toString() {
+		return "Batiment [idBatiment=" + idBatiment + ", adresse=" + adresse + ", nomBatiment=" + nomBatiment
+				+ ", secteur=" + secteur + ", groupe=" + groupe + ", listUser=" + listUser + ", listStock=" + listStock
+				+ "]";
+	}
+	
+	
+
 }
