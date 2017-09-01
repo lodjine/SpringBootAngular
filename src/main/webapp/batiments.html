@@ -4,6 +4,8 @@
         <tr>
             <th style="min-width: 80px;">Nom Batiment</th>
             <th style="min-width: 80px;">Adresse</th>
+            <th style="min-width: 80px;">Secteur</th>
+            <th style="min-width: 80px;">Groupe</th>
             <th style="width:20px;"> </th>
             <th style="width:20px;"> </th>
         </tr>
@@ -12,6 +14,8 @@
         <tr ng-repeat="batiment in batiments">
             <td>{{ batiment.nomBatiment }}</td>
             <td>{{ batiment.adresse }}</td>
+            <td>{{ batiment.secteur }}</td>
+            <td>{{ batiment.groupe }}</td>
         </tr>
         </tbody>
     </table>
