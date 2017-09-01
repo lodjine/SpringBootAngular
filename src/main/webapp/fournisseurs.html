@@ -1,0 +1,24 @@
+<div ng-controller="fournisseurListController">
+	<table>
+		<thead>
+			<tr>
+				<th>idFournisseur</th>
+				<th>nomEntreprise</th>
+				<th>nomResponsable</th>
+				<th>mail</th>
+				<th>numTel</th>
+				<th>adresse</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in fournisseurs">
+			<td>{{item.idFournisseur}}</td>
+			<td>{{item.nomEntreprise}}</td>
+			<td>{{item.nomResponsable}}</td>
+			<td>{{item.mail}}</td>
+			<td>{{item.numTel}}</td>
+			<td>{{item.adresse}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

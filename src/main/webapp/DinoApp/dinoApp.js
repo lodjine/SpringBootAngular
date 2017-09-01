@@ -1,15 +1,13 @@
-// app.js
 var routerApp = angular.module('routerApp', [ 'ui.router', 'ngResource' ]);
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
 	$stateProvider
 
-	// EXEMPLE !! ========================================
-	.state('add', {
-		url : '/add',
-		templateUrl : 'partial-add.html',
-		controller : 'addController'
-
+	// Fournisseur ========================================
+	.state('fournisseurs', {
+		url : '/fournisseurs',
+		templateUrl : 'fournisseurs.html',
+		controller : 'fournisseurListController'
 	})
 
 });
