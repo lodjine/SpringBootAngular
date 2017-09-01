@@ -31,7 +31,7 @@ public class FournisseurWService {
 		return fournisseur;
 	}
 
-	@ResponseBody
+	
 	@RequestMapping(value = "/fournisseurs", method = RequestMethod.GET)
 	public List<Fournisseur> getFournisseurs() {
 		return fournisseurDao.findAll();

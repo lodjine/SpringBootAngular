@@ -5,7 +5,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 
 	// Fournisseur ========================================
 	.state('fournisseurs', {
-		url : '/fournisseurs',
+		url : '/fournisseursMenu',
 		templateUrl : 'fournisseurs.html',
 		controller : 'fournisseurListController'
 	})
