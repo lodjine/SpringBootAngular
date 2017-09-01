@@ -1,4 +1,4 @@
-var app = angular.module('ngapp.controllers', []);
+var app = angular.module('produitApp.controllers', []);
 
 app.controller('ProduitsListCtrl', ['$scope', 'ProduitsFactory', 'ProduitFactory', '$location',
     function ($scope, ProduitsFactory, ProduitFactory, $location) {

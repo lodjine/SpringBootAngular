@@ -1,4 +1,4 @@
-var services = angular.module('ngapp.services', ['ngResource']);
+var services = angular.module('produitApp.services', ['ngResource']);
 
 services.factory('ProduitsFactory', function ($resource) {
     return $resource('/produits', {}, {
