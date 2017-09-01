@@ -1,0 +1,24 @@
+<div ng-controller:"ProduitsListController">
+
+<table class="">
+        <thead>
+        <tr>
+            <th style="min-width: 80px;">Nom</th>
+            <th style="min-width: 80px;">prix vente</th>
+            <th style="min-width: 80px;">descriptif</th>
+            <th style="min-width: 80px;">marque</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="produit in produits">
+            <td>{{ produit.nomProduit }}</td>
+            <td>{{ produit.prixVente }}</td>
+            <td>{{ produit.descriptif }}</td>
+            <td>{{ produit.marque }}</td>
+            <td><a ng-click="editProduit(produit.idProduit)" class="">editer</a></td>
+            <td><a ng-click="deleteUser(produit.idProduit)" class="">Supprimer</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a ng-click="createProduit()" class="">Creer Produit</a>
+</div>

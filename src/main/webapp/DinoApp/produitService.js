@@ -1,16 +1,16 @@
-var services = angular.module('produitApp.services', ['ngResource']);
+(function() {
+    'use strict';
+    angular
+        .module('routerApp')
+        .factory('produitService', produitService);
 
-services.factory('ProduitsFactory', function ($resource) {
-    return $resource('/produits', {}, {
-        query: { method: 'GET', isArray: true },
-        create: { method: 'POST' }
-    })
-});
+    produitService.$inject = ['$resource'];
 
-services.factory('ProduitFactory', function ($resource) {
-    return $resource('/produits/:id', {}, {
-        show: { method: 'GET' },
-        update: { method: 'PUT', params: {id: '@id'} },
-        delete: { method: 'DELETE', params: {id: '@id'} }
-    })
-});
+    function produitService ($resource) {
+    	
+    	var resourceUrl =  '/produits/:id';
+    	return $resource(resourceUrl, {}, {});
+    	
+        
+    }
+})();
