@@ -1,28 +1,22 @@
 angular.module("routerApp").controller('produitListController', produitListController);
 
-produitListController.$inject= ['$scope', 'produitService'];
+produitListController.$inject= ['$scope', '$state','produitService'];
 
-		function produitListController($scope, produitService) {
+		function produitListController($scope,$state, produitService) {
 			
 			$scope.produits=produitService.query();
 			
 			
 			$scope.deleteProduit=function deleteProduit(id) {
-				if(produitService.delete(id)){
-					console.log("Produit supprimé");
+				produitService.delete({id:id}, function(result){$state.reload();})
 					
-				}
-				else{
-					console.log("echec de suppression");
-				}
-				
 			}
+			
 			
 			$scope.saveProduit=function saveProduit(produit) {
 				if(produitService.save(produit)){
 					console.log("Produit enregistré");
-					
-				}
+					$state.reload();				}
 				else{
 					console.log("Echec de l'enregistrement du produit");
 				}
@@ -32,7 +26,7 @@ produitListController.$inject= ['$scope', 'produitService'];
 			$scope.updateProduit=function updateProduit(produit) {
 				if(produitService.put(produit)){
 					console.log("Produit updaté");
-					
+					$state.reload();	
 				}
 				else{
 					console.log("Echec de l'update du produit");
@@ -43,7 +37,6 @@ produitListController.$inject= ['$scope', 'produitService'];
 			$scope.getProduits=function getProduits() {
 				if(produitService.query()){
 					console.log("Liste des produits récupérée");
-					
 				}
 				else{
 					console.log("Echec de la récupération de la liste des produits");
@@ -54,7 +47,7 @@ produitListController.$inject= ['$scope', 'produitService'];
 			$scope.getProduit=function getProduit(id) {
 				if(produitService.get({id:id})){
 					console.log("Produits récupéré");
-					
+					$state.reload();	
 				}
 				else{
 					console.log("Echec de la récupération du produit");
