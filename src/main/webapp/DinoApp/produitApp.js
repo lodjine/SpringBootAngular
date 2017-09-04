@@ -1,17 +1,15 @@
-angular.module(
-		'produitApp',
-		[ 'produitApp.filters', 'produitApp.services', 'produitApp.directives',
-				'produitApp.controllers' ]).config(
-		[ '$routeProvider', function($routeProvider) {
-			$routeProvider.when('/produits', {
-				templateUrl : 'produits.html',
-				controller : 'ProduitsListCtrl'
-			});
-			$routeProvider.when('/produits/:id', {
-				templateUrl : 'produits.html',
-				controller : 'ProduitDetailCtrl'
-			});
-			$routeProvider.otherwise({
-				redirectTo : '/produits'
-			});
-		} ]);
+
+
+
+var routerApp = angular.module('produitApp', [ 'ui.router', 'ngResource' ]);
+
+routerApp.config(function($stateProvider, $urlRouterProvider) {
+	$stateProvider
+	
+	.state('produits', {
+		url : '/produits',
+		templateUrl : 'produits.html',
+		controller : 'produitListController'
+	});
+
+});
