@@ -8,7 +8,7 @@
 
     function batimentService ($resource) {
     	
-    	var resourceUrl =  '/batiments/:id';
+    	var resourceUrl =  '/batiment/:id';
     	return $resource(resourceUrl, {}, {});
         
     }
