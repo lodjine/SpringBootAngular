@@ -54,7 +54,7 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 				
 			}
 			
-			$scope.createProduit=function createProduit(produit){
+			$scope.createProduit=function createProduit(){
 				$scope.produit = null;
 			}
 			
