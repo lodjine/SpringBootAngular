@@ -174,7 +174,7 @@ public class Batiment implements Serializable{
 			return false;
 		return true;
 	}
-	
-	
 
+
+ 	
 }

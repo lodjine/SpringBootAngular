@@ -5,29 +5,75 @@
 	<div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" id="dataTable"
-				cellspacing="0" >
+				cellspacing="0">
 				<thead>
-        <tr>
-            <th style="min-width: 80px;">Nom Entrepot</th>
-            <th style="min-width: 80px;">Adresse</th>
-            <th style="min-width: 80px;">Secteur</th>
-            <th style="min-width: 80px;">Groupe</th>
-            <th style="min-width: 80px;">Capacite</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="entrepot in entrepots">
-            <td>{{ entrepot.nomBatiment }}</td>
-            <td>{{ entrepot.adresse }}</td>
-            <td>{{ entrepot.secteur }}</td>
-            <td>{{ entrepot.groupe }}</td>
-            <td>{{ entrepot.capacite }}</td>
-        <td><button ng-click="updateEntrepot(entrepot.idBatiment)" class="">editer</button></td>
-						<td><button ng-click="deleteEntrepot(entrepot.idBatiment)" class="">Supprimer</button></td>
+					<tr>
+						<th style="min-width: 80px;">Nom Entrepot</th>
+						<th style="min-width: 80px;">Adresse</th>
+						<th style="min-width: 80px;">Secteur</th>
+						<th style="min-width: 80px;">Groupe</th>
+						<th style="min-width: 80px;">Capacite</th>
 					</tr>
-        </tbody>
-    </table>
-    <button ng-click="saveEntrepot(entrepot)" class="">Creer Entrepot</button>
-</div>
-</div>
+				</thead>
+				<tbody>
+					<tr ng-repeat="entrepot in entrepots">
+						<td>{{ entrepot.nomBatiment }}</td>
+						<td>{{ entrepot.adresse }}</td>
+						<td>{{ entrepot.secteur }}</td>
+						<td>{{ entrepot.groupe }}</td>
+						<td>{{ entrepot.capacite }}</td>
+						<td><button ng-click="updateEntrepot(entrepot.idBatiment)"
+								class="">Editer</button></td>
+						<td><button ng-click="deleteEntrepot(entrepot.idBatiment)"
+								class="">Supprimer</button></td>
+					</tr>
+				</tbody>
+			</table>
+			<button ng-click="saveEntrepot(entrepot)" class="">Creer
+				Entrepot</button>
+		</div>
+	</div>
+
+	<!-- create Modal -->
+	<div class="modal fade" id="createModal" tabindex="-1" role="dialog"
+		aria-labelledby="createModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="createModalLabel">Creer Entrepôt</h5>
+				</div>
+				<form>
+					<div class="form-group">
+						<div class="modal-body">
+							<label for="inputNomEntrepot">Nom Entrpôt</label> <input
+								type="text" class="form-control" id="inputNomEntrepot"
+								aria-describedby="nameHelp" ng-model="entrepot.nomBatiment">
+						</div>
+						<div class="modal-body">
+							<label for="inputAdresseEntrepot">Adresse</label> <input
+								type="text" class="form-control" id="inputAdresseEntrepot"
+								aria-describedby="nameHelp" ng-model="entrepot.adresse">
+						</div>
+						<div class="modal-body">
+							<label for="inputSecteurEntrepot">Secteur</label> <input
+								type="text" class="form-control" id="inputSecteurEntrepot"
+								aria-describedby="nameHelp" ng-model="entrepot.secteur">
+						</div>
+						<div class="modal-body">
+							<label for="inputGroupeEntrepot">Groupe</label> <input type="text"
+								class="form-control" id="inputGroupeEntrepot"
+								aria-describedby="nameHelp" ng-model="entrepot.groupe">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Annuler</button>
+							<a class="btn btn-primary" ng-click="saveEntrepot(entrepot)">Confirmer</a>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
 </div>
