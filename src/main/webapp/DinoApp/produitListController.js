@@ -14,19 +14,13 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 			
 			
 			$scope.saveProduit=function saveProduit(produit) {
-				if(produitService.save(produit)){
-					console.log("Produit enregistré");
-					$state.reload();				}
-				else{
-					console.log("Echec de l'enregistrement du produit");
-				}
+				produitService.save(produit), function(result){$state.reload();}
 				
 			}
 			
 			$scope.updateProduit=function updateProduit(produit) {
-				if(produitService.put(produit)){
-					console.log("Produit updaté");
-					$state.reload();	
+				if(produitService.put(produit), function(result){$state.reload();}){
+					console.log("Produit updaté");	
 				}
 				else{
 					console.log("Echec de l'update du produit");
@@ -45,7 +39,7 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 			}
 			
 			$scope.getProduit=function getProduit(id) {
-				if(produitService.get({id:id})){
+				if(produitService.get({id:id}), function(result){$state.reload();}){
 					console.log("Produits récupéré");
 					$state.reload();	
 				}
