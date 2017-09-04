@@ -18,29 +18,29 @@ public class EntrepotWService {
 	@Autowired
 	private IEntrepotDao entrepotDao;
 
-	@RequestMapping(value = "/entrepots", method = RequestMethod.POST)
+	@RequestMapping(value = "/entrepot", method = RequestMethod.POST)
 	public Entrepot saveEntrepot(@RequestBody Entrepot entrepot) {
 		entrepotDao.save(entrepot);
 		return entrepot;
 	}
 
-	@RequestMapping(value = "/entrepots", method = RequestMethod.PUT)
+	@RequestMapping(value = "/entrepot", method = RequestMethod.PUT)
 	public Entrepot updateEntrepot(@RequestBody Entrepot entrepot) {
 		entrepotDao.save(entrepot);
 		return entrepot;
 	}
 
-	@RequestMapping(value = "/entrepots", method = RequestMethod.GET)
+	@RequestMapping(value = "/entrepot", method = RequestMethod.GET)
 	public List<Entrepot> getEntrepots() {
 		return entrepotDao.findAll();
 	}
 
-	@RequestMapping(value = "/entrepots/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/entrepot/{id}", method = RequestMethod.GET)
 	public Entrepot getEntrepot(@PathVariable Long id) {
 		return entrepotDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/entrepots/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/entrepot/{id}", method = RequestMethod.DELETE)
 	public boolean deleteEntrepot(@PathVariable Long id) {
 		entrepotDao.delete(id);
 		return true;
