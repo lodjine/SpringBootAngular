@@ -1,24 +1,32 @@
-<div>
-	<table>
-		<thead>
-			<tr>
-				<th>idFournisseur</th>
-				<th>nomEntreprise</th>
-				<th>nomResponsable</th>
-				<th>mail</th>
-				<th>numTel</th>
-				<th>adresse</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in fournisseurs">
-			<td>{{item.idFournisseur}}</td>
-			<td>{{item.nomEntreprise}}</td>
-			<td>{{item.nomResponsable}}</td>
-			<td>{{item.mail}}</td>
-			<td>{{item.numTel}}</td>
-			<td>{{item.adresse}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div class="card mb-3" style="margin: 1.5em;">
+	<div class="card-header">
+		<i class="fa fa-table"></i> Listes des Fournisseurs
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" width="100%" id="dataTable"
+				cellspacing="0">
+				<thead>
+					<tr>
+						<th>idFournisseur</th>
+						<th>nomEntreprise</th>
+						<th>nomResponsable</th>
+						<th>mail</th>
+						<th>numTel</th>
+						<th>adresse</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in fournisseurs">
+						<td>{{item.idFournisseur}}</td>
+						<td>{{item.nomEntreprise}}</td>
+						<td>{{item.nomResponsable}}</td>
+						<td>{{item.mail}}</td>
+						<td>{{item.numTel}}</td>
+						<td>{{item.adresse}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
