@@ -14,10 +14,15 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		controller : 'produitListController'
 	})
 
-	.state('batiments', {
-		url : '/batiments',
-		templateUrl : 'batiments.html',
-		controller : 'batimentListController'
+	.state('magasins', {
+		url : '/magasins',
+		templateUrl : 'magasins.html',
+		controller : 'magasinListController'
 	})
 
+	.state('entrepots', {
+		url : '/entrepots',
+		templateUrl : 'entrepots.html',
+		controller : 'entrepotListController'
+	})
 });
