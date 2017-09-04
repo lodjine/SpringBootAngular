@@ -8,7 +8,7 @@
 
     function produitService ($resource) {
     	
-    	var resourceUrl =  '/produits/:id';
+    	var resourceUrl =  '/produit/:id';
     	return $resource(resourceUrl, {}, {});
     	
         
