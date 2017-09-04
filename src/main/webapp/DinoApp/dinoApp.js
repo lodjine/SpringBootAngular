@@ -9,13 +9,13 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl : 'fournisseurs.html',
 		controller : 'fournisseurListController'
 	})
-	
+
 	.state('produits', {
 		url : '/produits',
 		templateUrl : 'produits.html',
 		controller : 'produitListController'
 	})
-	
+
 	.state('batiments', {
 		url : '/batiments',
 		templateUrl : 'batiments.html',
@@ -23,3 +23,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 	})
 
 });
+// .state('ce qui est cherche dans page html il fait le reste avec ui-sref'
+// {url : 'ce qui est afficher comme url',
+// templateUrl:'page charge', 
+// controller: 'le controller utilise'})
