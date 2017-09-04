@@ -18,29 +18,29 @@ public class ProduitWService {
 	@Autowired
 	private IProduitDao produitDao;
 	
-	@RequestMapping(value="/produits", method=RequestMethod.POST)
+	@RequestMapping(value="/produit", method=RequestMethod.POST)
 	public Produit saveProduit(@RequestBody Produit produit){
 		produitDao.save(produit);
 		return produit;
 	}
 	
-	@RequestMapping(value="/produits", method=RequestMethod.PUT)
+	@RequestMapping(value="/produit", method=RequestMethod.PUT)
 	public Produit updateProduit(@RequestBody Produit produit){
 		produitDao.save(produit);
 		return produit;
 	}
 	
-	@RequestMapping(value="/produits", method=RequestMethod.GET)
+	@RequestMapping(value="/produit", method=RequestMethod.GET)
 	public List<Produit> getProduits(){
 		return produitDao.findAll();
 	}
 	
-	@RequestMapping(value="/produits/{id}", method=RequestMethod.GET)	
+	@RequestMapping(value="/produit/{id}", method=RequestMethod.GET)	
 	public Produit getProduit(@PathVariable Long id){
 		return produitDao.findOne(id);
 	}
 	
-	@RequestMapping(value="/produits/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/produit/{id}", method=RequestMethod.DELETE)
 	public boolean deleteProduit(@PathVariable Long id){
 		produitDao.delete(id);
 		return true;
