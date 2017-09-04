@@ -3,9 +3,6 @@
 		<i class="fa fa-table"></i> Listes des Fournisseurs
 	</div>
 	<div class="card-body">
-		<button type="submit" class="btn btn-primary btn-block"
-			ui-sref="fournisseursForm()">Enregistrer un nouveau
-			fournisseur</button>
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" id="dataTable"
 				cellspacing="0">
@@ -31,9 +28,14 @@
 						<td><button type="submit" class="btn btn-primary btn-block"
 								ui-sref="fournisseursForm({id:item.idFournisseur})">
 								Modifier</button>
-								<button type="submit" class="btn btn-primary btn-block"
-									ng-click="deleteFournisseur(item.idFournisseur)">
-									Supprimer</button></td>
+							<button type="submit" class="btn btn-primary btn-block"
+								ng-click="deleteFournisseur(item.idFournisseur)">
+								Supprimer</button></td>
+					</tr>
+					<tr>
+						<td><button type="submit" class="btn btn-primary btn-block"
+								ui-sref="fournisseursForm()">Enregistrer un nouveau
+								fournisseur</button></td>
 					</tr>
 				</tbody>
 			</table>
