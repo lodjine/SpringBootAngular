@@ -5,9 +5,9 @@
 	<div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" id="dataTable"
-				cellspacing="0" >
+				cellspacing="0">
 				<thead>
-					<tr >
+					<tr>
 						<th style="min-width: 80px;">Nom du magasin</th>
 						<th style="min-width: 80px;">Adresse</th>
 						<th style="min-width: 80px;">Secteur</th>
@@ -20,12 +20,59 @@
 						<td>{{ item.adresse }}</td>
 						<td>{{ item.secteur }}</td>
 						<td>{{ item.groupe }}</td>
-						<td><button ng-click="updateMagasin(item.idBatiment)" class="">editer</button></td>
-						<td><button ng-click="deleteMagasin(item.idBatiment)" class="">Supprimer</button></td>
+						<td><button type="nav-link" data-toggle="modal"
+								data-target="#exampleModal" class="btn btn-primary btn-block"
+								ng-click="selectMagasin(item)">
+								<i class="fa fa-refresh" aria-hidden="true"></i>Modifier</button></td>
+						<td><button ng-click="deleteMagasin(item.idBatiment)"
+								class="">Supprimer</button></td>
 					</tr>
 				</tbody>
 			</table>
 			<button ng-click="saveMagasin(item)" class="">Creer Magasin</button>
 		</div>
 	</div>
+
+	<!-- update Modal -->
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+		aria-labelledby="editModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editModalLabel">Editer Magasin</h5>
+				</div>
+				<form>
+					<div class="form-group">
+						<div class="modal-body">
+							<label for="inputNomProduit">Nom du magasin</label> <input
+								type="text" class="form-control" id="inputNomBatiment"
+								aria-describedby="nameHelp" ng-model="item.nomBatiment">
+						</div>
+						<div class="modal-body">
+							<label for="inputPrixVenteProduit">Adresse</label> <input
+								type="text" class="form-control" id="inputAdresse"
+								aria-describedby="nameHelp" ng-model="item.adresse">
+						</div>
+						<div class="modal-body">
+							<label for="inputDescriptifProduit">Secteur</label> <input
+								type="text" class="form-control" id="inputSecteur"
+								aria-describedby="nameHelp" ng-model="item.secteur">
+						</div>
+						<div class="modal-body">
+							<label for="inputMarqueProduit">Groupe</label> <input type="text"
+								class="form-control" id="inputGroupe"
+								aria-describedby="nameHelp" ng-model="item.groupe">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary"
+								data-dismiss="modal">Annuler</button>
+							<a class="btn btn-primary" ng-click="updateMagasin(item)">Confirmer</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 </div>
