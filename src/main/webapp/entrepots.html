@@ -1,6 +1,7 @@
 <div class="card mb-3" style="margin: 1.5em;">
 	<div class="card-header">
-		<i class="fa fa-table"></i> Listes des entrepots
+		<i class="fa fa-file-text-o" aria-hidden="true"></i> Listes des
+		Entrepôts
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
@@ -8,72 +9,125 @@
 				cellspacing="0">
 				<thead>
 					<tr>
-						<th style="min-width: 80px;">Nom Entrepot</th>
-						<th style="min-width: 80px;">Adresse</th>
-						<th style="min-width: 80px;">Secteur</th>
-						<th style="min-width: 80px;">Groupe</th>
-						<th style="min-width: 80px;">Capacite</th>
+						<th>Nom de l'entrepôt</th>
+						<th>Adresse</th>
+						<th>Secteur</th>
+						<th>Groupe</th>
+						<th>Capacité</th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="entrepot in entrepots">
-						<td>{{ entrepot.nomBatiment }}</td>
-						<td>{{ entrepot.adresse }}</td>
-						<td>{{ entrepot.secteur }}</td>
-						<td>{{ entrepot.groupe }}</td>
-						<td>{{ entrepot.capacite }}</td>
-						<td><button ng-click="updateEntrepot(entrepot.idBatiment)"
-								class="">Editer</button></td>
-						<td><button ng-click="deleteEntrepot(entrepot.idBatiment)"
-								class="">Supprimer</button></td>
+					<tr ng-repeat="item in entrepots">
+						<td>{{item.nomBatiment}}</td>
+						<td>{{item.adresse}}</td>
+						<td>{{item.secteur}}</td>
+						<td>{{item.groupe}}</td>
+						<td>{{item.capacite}}</td>
+						<td><button type="nav-link" data-toggle="modal"
+								data-target="#exampleModal" class="btn btn-primary btn-block"
+								ng-click="selectEntrepot(item)">
+								<i class="fa fa-refresh" aria-hidden="true"></i> Modifier
+							</button>
+							<button type="submit" class="btn btn-primary btn-block"
+								ng-click="deleteEntrepot(item.idEntrepot)">
+								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
+							</button></td>
+					</tr>
+					<tr>
+						<td><button type="nav-link" data-toggle="modal"
+								data-target="#exampleModal" class="btn btn-primary btn-block"
+								ng-click="selectEntrepot()">
+								<i class="fa fa-plus-circle" aria-hidden="true"></i> Enregistrer
+								un nouvel entrepôt
+							</button></td>
 					</tr>
 				</tbody>
 			</table>
-			<button ng-click="saveEntrepot(entrepot)" class="">Creer
-				Entrepot</button>
 		</div>
 	</div>
 
-	<!-- create Modal -->
-	<div class="modal fade" id="createModal" tabindex="-1" role="dialog"
-		aria-labelledby="createModalLabel" aria-hidden="true">
+	<!-- update Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="createModalLabel">Creer Entrepôt</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Editer Entrepôt</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
 				</div>
-				<form>
-					<div class="form-group">
-						<div class="modal-body">
-							<label for="inputNomEntrepot">Nom Entrpôt</label> <input
-								type="text" class="form-control" id="inputNomEntrepot"
-								aria-describedby="nameHelp" ng-model="entrepot.nomBatiment">
-						</div>
-						<div class="modal-body">
-							<label for="inputAdresseEntrepot">Adresse</label> <input
-								type="text" class="form-control" id="inputAdresseEntrepot"
-								aria-describedby="nameHelp" ng-model="entrepot.adresse">
-						</div>
-						<div class="modal-body">
-							<label for="inputSecteurEntrepot">Secteur</label> <input
-								type="text" class="form-control" id="inputSecteurEntrepot"
-								aria-describedby="nameHelp" ng-model="entrepot.secteur">
-						</div>
-						<div class="modal-body">
-							<label for="inputGroupeEntrepot">Groupe</label> <input type="text"
-								class="form-control" id="inputGroupeEntrepot"
-								aria-describedby="nameHelp" ng-model="entrepot.groupe">
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-dismiss="modal">Annuler</button>
-							<a class="btn btn-primary" ng-click="saveEntrepot(entrepot)">Confirmer</a>
-						</div>
-					</div>
-				</form>
+				<div class="modal-body">
+					<div class="card-body">
 
+						<form>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputNom">Nom Entrepôt</label> <input type="text"
+											class="form-control" id="inputNom"
+											placeholder="Entrer le nom de l'entrepôt"
+											ng-model="entrepotDialog.nomBatiment">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputAdresse">Adresse</label> <input type="text"
+											class="form-control" id="inputAdresse"
+											placeholder="Entrer l'adresse"
+											ng-model="entrepotDialog.adresse">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputSecteur">Secteur</label> <input type="text"
+											class="form-control" id="inputSecteur"
+											placeholder="Entrer le secteur"
+											ng-model="entrepotDialog.secteur">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputGroupe">Groupe</label> <input
+											type="text" class="form-control" id="inputGroupe"
+											placeholder="Entrer le groupe"
+											ng-model="entrepotDialog.groupe">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputCapacite">Capacité</label> <input type="text"
+											class="form-control" id="inputCapacite"
+											placeholder="Entrer la capacité"
+											ng-model="entrepotDialog.capacite">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i> Annuler
+					</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						ng-click="updateEntrepot(entrepotDialog)">
+						<i class="fa fa-check" aria-hidden="true"></i> Confirmer
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
-
-</div>
