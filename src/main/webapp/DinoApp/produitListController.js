@@ -49,5 +49,10 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 				
 			}
 			
+			$scope.selectProduit=function selectProduit(produit) {
+				$scope.produit=produit;
+				
+			}
+			
 			
 		};

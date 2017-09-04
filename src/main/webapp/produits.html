@@ -21,16 +21,14 @@
 						<td>{{ produit.descriptif }}</td>
 						<td>{{ produit.marque }}</td>
 						<td>
-						<a class="nav-link" data-toggle="modal"
-						data-target="#exampleModal"> <i class="fa fa-fw fa-sign-out"></i>
-							editer
-					</a>	
+						<button class="nav-link" data-toggle="modal"
+						data-target="#exampleModal" ng-click="selectProduit(produit)">editer</button>	
 						</td>
-						<td><button ng-click="deleteProduit(produit.idProduit)" class="">Supprimer</button></td>
+						<td><button class="nav-link" ng-click="deleteProduit(produit.idProduit)" >Supprimer</button></td>
 					</tr>
 				</tbody>
 			</table>
-			<button ng-click="saveProduit(produit)" class="">Creer Produit</button>
+			<button class="nav-link" ng-click="saveProduit(produit)">Creer Produit</button>
 		</div>
 	</div>
 	
@@ -47,12 +45,15 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div class="modal-body">Confirmez votre déconnexion en
-							appuyant sur le bouton ci-dessous.</div>
+						<div class="modal-body">
+							<label for="inputNomProduit">Nom Produit</label> <input type="text"
+							class="form-control" id="inputNomProduit" aria-describedby="nameHelp"
+							ng-model="produit.nomProduit" >
+						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary"
 								data-dismiss="modal">Annuler</button>
-							<a class="btn btn-primary" href="login.html">Confirmer</a>
+							<a class="btn btn-primary" ng-click="updateProduit(produit)">Confirmer</a>
 						</div>
 					</div>
 				</div>
