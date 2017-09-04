@@ -13,17 +13,12 @@ magasinListController.$inject = ['$scope','magasinService'];
 		}
 		
 		$scope.saveMagasin=function saveMagasin(Mmagasin) {
-			if(MagasinService.save(magasin)){
-				console.log("Magasin enregistré");
-				$state.reload();				}
-			else{
-				console.log("Echec de l'enregistrement du magasin");
-			}
-			
+			magasinService.save(magasin),function(result){$state.reload();}
+					
 		}
 		
 		$scope.updateMagasin=function updateMagasin(magasin) {
-			if(magasinService.put(magasin)){
+			if(magasinService.put(magasin),function(result){$state.reload();}){
 				console.log("Magasin updaté");
 				$state.reload();	
 			}
@@ -44,7 +39,7 @@ magasinListController.$inject = ['$scope','magasinService'];
 		}
 		
 		$scope.getMagasin=function getMagasin(id) {
-			if(magasinService.get({id:id})){
+			if(magasinService.get({id:id}),function(result){$state.reload();})){
 				console.log("Magasins récupéré");
 				$state.reload();	
 			}
