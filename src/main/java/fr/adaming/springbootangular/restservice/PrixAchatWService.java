@@ -19,29 +19,29 @@ public class PrixAchatWService {
 	@Autowired
 	private IPrixAchatDao prixAchatDao;
 
-	@RequestMapping(value = "/prix_achats", method = RequestMethod.POST)
+	@RequestMapping(value = "/prix_achat", method = RequestMethod.POST)
 	public PrixAchat savePrixAchat(@RequestBody PrixAchat prixAchat) {
 		prixAchatDao.save(prixAchat);
 		return prixAchat;
 	}
 
-	@RequestMapping(value = "/prix_achats", method = RequestMethod.PUT)
+	@RequestMapping(value = "/prix_achat", method = RequestMethod.PUT)
 	public PrixAchat updatePrixAchat(@RequestBody PrixAchat prixAchat) {
 		prixAchatDao.save(prixAchat);
 		return prixAchat;
 	}
 
-	@RequestMapping(value = "/prix_achats", method = RequestMethod.GET)
+	@RequestMapping(value = "/prix_achat", method = RequestMethod.GET)
 	public List<PrixAchat> getPrixAchats() {
 		return prixAchatDao.findAll();
 	}
 
-	@RequestMapping(value = "/prix_achats/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/prix_achat/{id}", method = RequestMethod.GET)
 	public PrixAchat getPrixAchat(@PathVariable IdPrixAchat id) {
 		return prixAchatDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/prix_achats/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/prix_achat/{id}", method = RequestMethod.DELETE)
 	public boolean deletePrixAchat(@PathVariable IdPrixAchat id) {
 		prixAchatDao.delete(id);
 		return true;

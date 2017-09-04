@@ -18,30 +18,30 @@ public class MagasinWService {
 	@Autowired
 	private IMagasinDao magasinDao;
 	
-	@RequestMapping(value="/magasins", method=RequestMethod.POST)
+	@RequestMapping(value="/magasin", method=RequestMethod.POST)
 	public Magasin saveMagasin (@RequestBody Magasin magasin){
 		magasinDao.save(magasin);
 		return magasin;
 	}
 	
-	@RequestMapping(value="/magasins", method=RequestMethod.PUT)
+	@RequestMapping(value="/magasin", method=RequestMethod.PUT)
 	public Magasin updateMagasin (@RequestBody Magasin magasin){
 		magasinDao.save(magasin);
 		return magasin;
 	}
 	
-	@RequestMapping(value="/magasins", method=RequestMethod.GET)
+	@RequestMapping(value="/magasin", method=RequestMethod.GET)
 	public List<Magasin> getMagasins(){
 		return magasinDao.findAll();
 	}
 	
 	
-	@RequestMapping(value="/magasins/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/magasin/{id}", method=RequestMethod.GET)
 	public Magasin getMagasin(@PathVariable Long id){
 		return magasinDao.findOne(id);
 		}
 	
-	@RequestMapping(value="/magasins/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/magasin/{id}", method=RequestMethod.DELETE)
 	public boolean deleteMagasin(@PathVariable Long id) {
 		magasinDao.delete(id);
 		return true;

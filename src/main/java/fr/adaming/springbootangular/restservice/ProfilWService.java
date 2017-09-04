@@ -18,29 +18,29 @@ public class ProfilWService {
 	@Autowired
 	private IProfilDao profilDao;
 	
-	@RequestMapping(value="/profils", method=RequestMethod.POST)
+	@RequestMapping(value="/profil", method=RequestMethod.POST)
 	public Profil saveProfil(@RequestBody Profil profil){
 		profilDao.save(profil);
 		return profil;
 	}
 	
-	@RequestMapping(value="/profils", method=RequestMethod.PUT)
+	@RequestMapping(value="/profil", method=RequestMethod.PUT)
 	public Profil updateProfil(@RequestBody Profil profil){
 		profilDao.save(profil);
 		return profil;
 	}
 	
-	@RequestMapping(value="/profils", method=RequestMethod.GET)
+	@RequestMapping(value="/profil", method=RequestMethod.GET)
 	public List<Profil> getProfils(){
 		return profilDao.findAll();
 	}
 	
-	@RequestMapping(value="/profils/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/profil/{id}", method=RequestMethod.GET)
 	public Profil getProfil(@PathVariable Long id){
 		return profilDao.findOne(id);
 	}
 	
-	@RequestMapping(value="/profils/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/profil/{id}", method=RequestMethod.DELETE)
 	public boolean deleteProfil(@PathVariable Long id){
 		profilDao.delete(id);
 		return true;

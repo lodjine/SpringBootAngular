@@ -19,29 +19,29 @@ public class StockWService {
 	@Autowired
 	private IStockDao stockDao;
 
-	@RequestMapping(value = "/stocks", method = RequestMethod.POST)
+	@RequestMapping(value = "/stock", method = RequestMethod.POST)
 	public Stock saveStock(@RequestBody Stock stock) {
 		stockDao.save(stock);
 		return stock;
 	}
 
-	@RequestMapping(value = "/stocks", method = RequestMethod.PUT)
+	@RequestMapping(value = "/stock", method = RequestMethod.PUT)
 	public Stock updateStock(@RequestBody Stock stock) {
 		stockDao.save(stock);
 		return stock;
 	}
 
-	@RequestMapping(value = "/stocks", method = RequestMethod.GET)
+	@RequestMapping(value = "/stock", method = RequestMethod.GET)
 	public List<Stock> getStocks() {
 		return stockDao.findAll();
 	}
 
-	@RequestMapping(value = "/stocks/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/stock/{id}", method = RequestMethod.GET)
 	public Stock getStock(@PathVariable IdStock id) {
 		return stockDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/stocks/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/stock/{id}", method = RequestMethod.DELETE)
 	public boolean deleteStock(@PathVariable IdStock id) {
 		stockDao.delete(id);
 		return true;

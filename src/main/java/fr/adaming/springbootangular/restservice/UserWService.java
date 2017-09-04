@@ -18,29 +18,29 @@ public class UserWService {
 	@Autowired
 	private IUserDao userDao;
 	
-	@RequestMapping(value="/users", method=RequestMethod.POST)
+	@RequestMapping(value="/user", method=RequestMethod.POST)
 	public User saveUser(@RequestBody User user){
 		userDao.save(user);
 		return user;
 	}
 	
-	@RequestMapping(value="/users", method=RequestMethod.PUT)
+	@RequestMapping(value="/user", method=RequestMethod.PUT)
 	public User updateUser(@RequestBody User user){
 		userDao.save(user);
 		return user;
 	}
 	
-	@RequestMapping(value="/users", method=RequestMethod.GET)
+	@RequestMapping(value="/user", method=RequestMethod.GET)
 	public List<User> getUsers(){
 		return userDao.findAll();
 	}
 	
-	@RequestMapping(value="/users/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/user/{id}", method=RequestMethod.GET)
 	public User getUser(@PathVariable Long id){
 		return userDao.findOne(id);
 	}
 	
-	@RequestMapping(value="/users/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(value="/user/{id}", method=RequestMethod.DELETE)
 	public boolean deleteUser(@PathVariable Long id){
 		userDao.delete(id);
 		return true;
