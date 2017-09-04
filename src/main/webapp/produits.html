@@ -5,9 +5,9 @@
 	<div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" id="dataTable"
-				cellspacing="0">
+				cellspacing="0" >
 				<thead>
-					<tr>
+					<tr >
 						<th style="min-width: 80px;">Nom</th>
 						<th style="min-width: 80px;">prix vente</th>
 						<th style="min-width: 80px;">descriptif</th>
@@ -20,12 +20,12 @@
 						<td>{{ produit.prixVente }}</td>
 						<td>{{ produit.descriptif }}</td>
 						<td>{{ produit.marque }}</td>
-						<td><a ng-click:"updateProduit(produit)" class="">editer</a></td>
-						<td><a ng-click:"deleteProduit(produit.idProduit)" class="">Supprimer</a></td>
+						<td><button ng-click:"updateProduit(produit)" class="">editer</button></td>
+						<td><button ng-click:"deleteProduit(produit.idProduit)" class="">Supprimer</button></td>
 					</tr>
 				</tbody>
 			</table>
-			<a ng-click="saveProduit(produit)" class="">Creer Produit</a>
+			<button ng-click="saveProduit(produit)" class="">Creer Produit</button>
 		</div>
 	</div>
 </div>

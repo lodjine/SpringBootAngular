@@ -19,7 +19,7 @@ produitListController.$inject= ['$scope', 'produitService'];
 			}
 			
 			$scope.saveProduit=function saveProduit(produit) {
-				if(produitService.post(produit)){
+				if(produitService.save(produit)){
 					console.log("Produit enregistré");
 					
 				}
@@ -41,7 +41,7 @@ produitListController.$inject= ['$scope', 'produitService'];
 			}
 			
 			$scope.getProduits=function getProduits() {
-				if(produitService.get()){
+				if(produitService.query()){
 					console.log("Liste des produits récupérée");
 					
 				}
@@ -52,7 +52,7 @@ produitListController.$inject= ['$scope', 'produitService'];
 			}
 			
 			$scope.getProduit=function getProduit(id) {
-				if(produitService.get(id)){
+				if(produitService.get({id:id})){
 					console.log("Produits récupéré");
 					
 				}
