@@ -3,6 +3,7 @@ angular.module("routerApp").controller('fournisseurListController', fournisseurL
 fournisseurListController.$inject= ['$scope', 'fournisseurService', '$state', '$stateParams'];
 
 		function fournisseurListController($scope, fournisseurService, $state, $stateParams) {
+			
 			$scope.fournisseurs=fournisseurService.query();
 			
 			$scope.deleteFournisseur = function(idFournisseur) {
