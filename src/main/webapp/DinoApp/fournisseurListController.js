@@ -3,7 +3,6 @@ angular.module("routerApp").controller('fournisseurListController', fournisseurL
 fournisseurListController.$inject= ['$scope', 'fournisseurService'];
 
 		function fournisseurListController($scope, fournisseurService) {
-			alert("00");
 			$scope.fournisseurs=fournisseurService.query();
 			
 		};
