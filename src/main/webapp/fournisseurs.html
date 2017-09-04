@@ -1,6 +1,7 @@
 <div class="card mb-3" style="margin: 1.5em;">
 	<div class="card-header">
-		<i class="fa fa-table"></i> Listes des Fournisseurs
+		<i class="fa fa-file-text-o" aria-hidden="true"></i> Listes des
+		Fournisseurs
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
@@ -8,40 +9,120 @@
 				cellspacing="0">
 				<thead>
 					<tr>
-						<th>idFournisseur</th>
-						<th>nomEntreprise</th>
-						<th>nomResponsable</th>
-						<th>mail</th>
-						<th>numTel</th>
-						<th>adresse</th>
+						<th>Nom de l'entreprise</th>
+						<th>Nom du contact</th>
+						<th>Courriel du contact</th>
+						<th>Numéro de téléphone du contact</th>
+						<th>Adresse de l'entreprise</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="item in fournisseurs">
-						<td>{{item.idFournisseur}}</td>
 						<td>{{item.nomEntreprise}}</td>
 						<td>{{item.nomResponsable}}</td>
 						<td>{{item.mail}}</td>
 						<td>{{item.numTel}}</td>
 						<td>{{item.adresse}}</td>
-						<td><button type="submit" class="btn btn-primary btn-block"
-								ui-sref="fournisseursForm({id:item.idFournisseur})">
-								Modifier</button>
+						<td><button type="nav-link" data-toggle="modal"
+								data-target="#exampleModal" class="btn btn-primary btn-block"
+								ng-click="selectFournisseur(item)">
+								<i class="fa fa-refresh" aria-hidden="true"></i> Modifier
+							</button>
 							<button type="submit" class="btn btn-primary btn-block"
 								ng-click="deleteFournisseur(item.idFournisseur)">
-								Supprimer</button></td>
+								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
+							</button></td>
 					</tr>
 					<tr>
-						<td><button type="submit" class="btn btn-primary btn-block"
-								ui-sref="fournisseursForm()">Enregistrer un nouveau
+						<td><button type="nav-link" data-toggle="modal"
+								data-target="#exampleModal" class="btn btn-primary btn-block"
+								ng-click="selectFournisseur()"><i class="fa fa-plus-circle" aria-hidden="true"></i>
+								Enregistrer un nouveau
 								fournisseur</button></td>
 					</tr>
 				</tbody>
 			</table>
-
-
-
 		</div>
 	</div>
+
+	<!-- update Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Editer
+						Fournisseur</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="card-body">
+
+						<form>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputNom">Nom Entreprise</label> <input
+											type="text" class="form-control" id="inputNom"
+											aria-describedby="nameHelp"
+											placeholder="Entrer Nom de l'entreprise"
+											ng-model="fournisseurDialog.nomEntreprise">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputContact">Nom contact</label> <input
+											type="text" class="form-control" id="inputContact"
+											aria-describedby="nameHelp" placeholder="Entrer nom contact"
+											ng-model="fournisseurDialog.nomResponsable">
+									</div>
+									<div class="col-md-6">
+										<label for="inputEmail">Adresse mail</label> <input
+											type="email" class="form-control" id="inputEmail"
+											aria-describedby="emailHelp" placeholder="Entrer courriel"
+											ng-model="fournisseurDialog.mail">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<div class="col-md-6">
+										<label for="inputNumTelephone">Numéro téléphone</label> <input
+											type="text" class="form-control" id="inputNumTelephone"
+											placeholder="Entrer numéro de téléphone"
+											ng-model="fournisseurDialog.numTel">
+									</div>
+									<div class="col-md-6">
+										<label for="inputAdresse">Adresse postale</label> <input
+											type="text" class="form-control" id="inputAdresse"
+											placeholder="Entrer adresse fournisseur"
+											ng-model="fournisseurDialog.adresse">
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i> Annuler
+					</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						ng-click="updateFournisseur(fournisseurDialog)">
+						<i class="fa fa-check" aria-hidden="true"></i> Confirmer
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>

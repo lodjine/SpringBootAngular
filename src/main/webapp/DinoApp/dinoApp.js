@@ -8,12 +8,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		controller : 'fournisseurListController'
 	})
 	
-	.state('fournisseursForm', {
-		url : '/formulaire_fournisseurs/:id',
-		templateUrl : 'fournisseursForm.html',
-		controller : 'fournisseurFormController'
-	})
-
 	.state('produits', {
 		url : '/produits',
 		templateUrl : 'produits.html',
