@@ -5,6 +5,7 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 		function produitListController($scope,$state, produitService) {
 			
 			$scope.produits=produitService.query();
+			$scope.produitDialog={};
 			
 			
 			$scope.deleteProduit=function deleteProduit(id) {
@@ -13,19 +14,11 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 			}
 			
 			
-			$scope.saveProduit=function saveProduit(produit) {
-				produitService.save(produit), function(result){$state.reload();}
-				
-			}
-			
-			$scope.updateProduit=function updateProduit(produit) {
-				produitService.put(produit), function(result){$state.reload();}){
-					console.log("Produit updaté");	
-				}
-				else{
-					console.log("Echec de l'update du produit");
-				}
-				
+			$scope.updateProduit = function(produitDialog) {
+				produitService.save(produitDialog, function(result) {
+					$scope.produits=produitService.query();
+					$state.go('produits');
+				});
 			}
 			
 			$scope.getProduits=function getProduits() {
@@ -50,13 +43,8 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 			}
 			
 			$scope.selectProduit=function selectProduit(produit) {
-				$scope.produit=produit;
+				$scope.produitDialog=angular.copy(produit);
 				
 			}
-			
-			$scope.createProduit=function createProduit(produit){
-				$scope.produit = null;
-			}
-			
 			
 		};
