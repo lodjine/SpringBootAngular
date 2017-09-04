@@ -19,7 +19,7 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 			}
 			
 			$scope.updateProduit=function updateProduit(produit) {
-				if(produitService.put(produit), function(result){$state.reload();}){
+				produitService.put(produit), function(result){$state.reload();}){
 					console.log("Produit updaté");	
 				}
 				else{
@@ -52,6 +52,10 @@ produitListController.$inject= ['$scope', '$state','produitService'];
 			$scope.selectProduit=function selectProduit(produit) {
 				$scope.produit=produit;
 				
+			}
+			
+			$scope.createProduit=function createProduit(produit){
+				$scope.produit = null;
 			}
 			
 			

@@ -5,9 +5,9 @@
 	<div class="card-body">
 		<div class="table-responsive">
 			<table class="table table-bordered" width="100%" id="dataTable"
-				cellspacing="0" >
+				cellspacing="0">
 				<thead>
-					<tr >
+					<tr>
 						<th style="min-width: 80px;">Nom</th>
 						<th style="min-width: 80px;">prix vente</th>
 						<th style="min-width: 80px;">descriptif</th>
@@ -21,42 +21,101 @@
 						<td>{{ produit.descriptif }}</td>
 						<td>{{ produit.marque }}</td>
 						<td>
-						<button class="nav-link" data-toggle="modal"
-						data-target="#exampleModal" ng-click="selectProduit(produit)">editer</button>	
+							<button class="nav-link" data-toggle="modal"
+								data-target="#editModal" ng-click="selectProduit(produit)">editer</button>
 						</td>
-						<td><button class="nav-link" ng-click="deleteProduit(produit.idProduit)" >Supprimer</button></td>
+						<td><button class="nav-link"
+								ng-click="deleteProduit(produit.idProduit)">Supprimer</button></td>
 					</tr>
 				</tbody>
 			</table>
-			<button class="nav-link" ng-click="saveProduit(produit)">Creer Produit</button>
+			<button data-target="#createModal" class="nav-link" ng-click="createProduit(produit)">Creer Produit</button>
+		</div>
+	</div>
+
+
+	<!-- update Modal -->
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+		aria-labelledby="editModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="editModalLabel">Editer Produit</h5>
+					</div>
+					<form>
+						<div class="form-group">
+							<div class="modal-body">
+								<label for="inputNomProduit">Nom Produit</label> <input
+									type="text" class="form-control" id="inputNomProduit"
+									aria-describedby="nameHelp" ng-model="produit.nomProduit">
+							</div>
+							<div class="modal-body">
+								<label for="inputPrixVenteProduit">Prix de vente</label> <input
+									type="text" class="form-control" id="inputPrixVenteProduit"
+									aria-describedby="nameHelp" ng-model="produit.prixVente">
+							</div>
+							<div class="modal-body">
+								<label for="inputDescriptifProduit">Descriptif</label> <input
+									type="text" class="form-control" id="inputDescriptifProduit"
+									aria-describedby="nameHelp" ng-model="produit.descriptif">
+							</div>
+							<div class="modal-body">
+								<label for="inputMarqueProduit">Marque</label> <input
+									type="text" class="form-control" id="inputMarqueProduit"
+									aria-describedby="nameHelp" ng-model="produit.marque">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Annuler</button>
+								<a class="btn btn-primary" ng-click="updateProduit(produit)">Confirmer</a>
+							</div>
+						</div>
+					</form>
+				
+			</div>
 		</div>
 	</div>
 	
-	
-				<!-- update Modal -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-				aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Editer Produit</h5>
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<label for="inputNomProduit">Nom Produit</label> <input type="text"
-							class="form-control" id="inputNomProduit" aria-describedby="nameHelp"
-							ng-model="produit.nomProduit" >
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-dismiss="modal">Annuler</button>
-							<a class="btn btn-primary" ng-click="updateProduit(produit)">Confirmer</a>
-						</div>
+	<!-- create Modal -->
+	<div class="modal fade" id="createModal" tabindex="-1" role="dialog"
+		aria-labelledby="createModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="createModalLabel">Creer Produit</h5>
 					</div>
-				</div>
+					<form>
+						<div class="form-group">
+							<div class="modal-body">
+								<label for="inputNomProduit">Nom Produit</label> <input
+									type="text" class="form-control" id="inputNomProduit"
+									aria-describedby="nameHelp" ng-model="produit.nomProduit">
+							</div>
+							<div class="modal-body">
+								<label for="inputPrixVenteProduit">Prix de vente</label> <input
+									type="text" class="form-control" id="inputPrixVenteProduit"
+									aria-describedby="nameHelp" ng-model="produit.prixVente">
+							</div>
+							<div class="modal-body">
+								<label for="inputDescriptifProduit">Descriptif</label> <input
+									type="text" class="form-control" id="inputDescriptifProduit"
+									aria-describedby="nameHelp" ng-model="produit.descriptif">
+							</div>
+							<div class="modal-body">
+								<label for="inputMarqueProduit">Marque</label> <input
+									type="text" class="form-control" id="inputMarqueProduit"
+									aria-describedby="nameHelp" ng-model="produit.marque">
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary"
+									data-dismiss="modal">Annuler</button>
+								<a class="btn btn-primary" ng-click="saveProduit(produit)">Confirmer</a>
+							</div>
+						</div>
+					</form>
+				
 			</div>
-	
+		</div>
+	</div>
+
 </div>
