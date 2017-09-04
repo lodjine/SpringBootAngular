@@ -1,6 +1,6 @@
 package fr.adaming.springbootangular.restservice;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import fr.adaming.springbootangular.dao.IBatimentDao;
 import fr.adaming.springbootangular.model.Batiment;
@@ -23,29 +19,29 @@ public class BatimentWService {
 	@Autowired
 	private IBatimentDao batimentDao;
 
-	@RequestMapping(value = "/batiments", method = RequestMethod.POST)
+	@RequestMapping(value = "/batiment", method = RequestMethod.POST)
 	public Batiment saveBatiment(@RequestBody Batiment batiment) {
 		batimentDao.save(batiment);
 		return batiment;
 	}
 
-	@RequestMapping(value = "/batiments", method = RequestMethod.PUT)
+	@RequestMapping(value = "/batiment", method = RequestMethod.PUT)
 	public Batiment updateBatiment(@RequestBody Batiment batiment) {
 		batimentDao.save(batiment);
 		return batiment;
 	}
 
-	@RequestMapping(value = "/batiments", method = RequestMethod.GET)
+	@RequestMapping(value = "/batiment", method = RequestMethod.GET)
 	public List<Batiment> getBatiments() {
 		return batimentDao.findAll();
 	}
 
-	@RequestMapping(value = "/batiments/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/batiment/{id}", method = RequestMethod.GET)
 	public Batiment getBatiment(@PathVariable Long id) {
 		return batimentDao.findOne(id);
 	}
 
-	@RequestMapping(value = "/batiments/{id}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/batiment/{id}", method = RequestMethod.DELETE)
 	public void deleteBatiment(@PathVariable Long id) {
 		batimentDao.delete(id);
 	}
