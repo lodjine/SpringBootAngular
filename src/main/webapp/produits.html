@@ -1,24 +1,31 @@
-<div >
-
-<table class="">
-        <thead>
-        <tr>
-            <th style="min-width: 80px;">Nom</th>
-            <th style="min-width: 80px;">prix vente</th>
-            <th style="min-width: 80px;">descriptif</th>
-            <th style="min-width: 80px;">marque</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="produit in produits">
-            <td>{{ produit.nomProduit }}</td>
-            <td>{{ produit.prixVente }}</td>
-            <td>{{ produit.descriptif }}</td>
-            <td>{{ produit.marque }}</td>
-            <td><a  class="">editer</a></td>
-            <td><a  class="">Supprimer</a></td>
-        </tr>
-        </tbody>
-    </table>
-    <a ng-click="createProduit()" class="">Creer Produit</a>
+<div class="card mb-3" style="margin: 1.5em;">
+	<div class="card-header">
+		<i class="fa fa-table"></i> Listes des Produits
+	</div>
+	<div class="card-body">
+		<div class="table-responsive">
+			<table class="table table-bordered" width="100%" id="dataTable"
+				cellspacing="0">
+				<thead>
+					<tr>
+						<th style="min-width: 80px;">Nom</th>
+						<th style="min-width: 80px;">prix vente</th>
+						<th style="min-width: 80px;">descriptif</th>
+						<th style="min-width: 80px;">marque</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="produit in produits">
+						<td>{{ produit.nomProduit }}</td>
+						<td>{{ produit.prixVente }}</td>
+						<td>{{ produit.descriptif }}</td>
+						<td>{{ produit.marque }}</td>
+						<td><a ng-click:"updateProduit(produit)" class="">editer</a></td>
+						<td><a ng-click:"deleteProduit(produit.idProduit)" class="">Supprimer</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<a ng-click="saveProduit(produit)" class="">Creer Produit</a>
+		</div>
+	</div>
 </div>
