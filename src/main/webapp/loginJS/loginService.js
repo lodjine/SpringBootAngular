@@ -8,7 +8,11 @@
 
 		var resourceUrl = '/user/:id';
 		return $resource(resourceUrl, {}, {
-
+			'getAll' : {
+				method : 'GET',
+				isArray : true,
+				url : '/user'
+			},
 			'getByLogin' : {
 				method : 'GET',
 				isArray : false,

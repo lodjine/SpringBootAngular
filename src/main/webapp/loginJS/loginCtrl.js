@@ -8,16 +8,17 @@ loginCtrl.$inject= ['$scope', '$rootScope', '$state','loginService', '$statePara
 			$scope.selectUser=function selectUser() {
 				var login=$scope.login;
 				var mp=$scope.password;
-				$scope.user=loginService.getByLogin({log:login,pw:mp});
-				$scope.users=loginService.query();
+				var list=loginService.getAll();
+				var obj=loginService.getByLogin({log:login,pw:mp});
 				
-				
-				
-				
-				for(key in $scope.users) {
-				    var obj = $scope.users[key];
-				    alert(obj)	;			 
+				if(list.indexOf(obj) !== -1) {
+					  	alert('OK');
+					}
+				else{
+					alert('NOK');
 				}
+				
+				
 				
 				
 				
