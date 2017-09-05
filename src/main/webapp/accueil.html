@@ -19,14 +19,12 @@
 <script src="/bower_components/angular/angular.min.js"></script>
 <script
 	src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-	<script
-	src="/bower_components/angular-resource/angular-resource.min.js"></script>
+<script src="/bower_components/angular-resource/angular-resource.min.js"></script>
 
 <!-- Import fichier js -->
 <script src="/DinoApp/dinoApp.js"></script>
 <script src="/DinoApp/fournisseurService.js"></script>
 <script src="/DinoApp/fournisseurListController.js"></script>
-<script src="/DinoApp/fournisseurFormController.js"></script>
 <script src="/DinoApp/magasinService.js"></script>
 <script src="/DinoApp/produitService.js"></script>
 <script src="/DinoApp/magasinListController.js"></script>
@@ -43,7 +41,7 @@
 
 <meta name="description" content="">
 <meta name="author" content="">
-<title>DinoMarket, les leaders du Jura sique</title>
+<title>DinoMarket, les leaders du Jura ssique</title>
 
 <!-- Bootstrap core CSS -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -61,173 +59,173 @@
 
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top" ng-app="routerApp">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top"
+	ng-app="routerApp">
 
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-			id="mainNav">
-			<a class="navbar-brand" href="#"
-				style="color: goldenrod; font-family: fantasy;">DINO-MARKET</a>
-			<button class="navbar-toggler navbar-toggler-right" type="button"
-				data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+		id="mainNav">
+		<a class="navbar-brand" href="#"
+			style="color: goldenrod; font-family: fantasy;">DINO-MARKET</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarResponsive"
+			aria-controls="navbarResponsive" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 
-					<li class="nav-item" data-toggle="tooltip" data-placement="right"
-						title="Dashboard"><a class="nav-link" href="#"> <i
-							class="fa fa-fw fa-user"></i> <span class="nav-link-text">
-								Jo Zeff</span>
-					</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Dashboard"><a class="nav-link" href="#"> <i
+						class="fa fa-fw fa-user"></i> <span class="nav-link-text">
+							Jo Zeff</span>
+				</a></li>
 
-					<li class="nav-item" data-toggle="tooltip" data-placement="right"
-						title="Dashboard"><a class="nav-link" ui-sref=""> <i
-							class="fa fa-fw fa-home"></i> <span class="nav-link-text">
-								Accueil</span>
-					</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Dashboard"><a class="nav-link" ui-sref=""> <i
+						class="fa fa-fw fa-home"></i> <span class="nav-link-text">
+							Accueil</span>
+				</a></li>
 
-					<li class="nav-item" data-toggle="tooltip" data-placement="right"
-						title="Dashboard"><a class="nav-link"
-						ui-sref="fournisseurs"> <i class="fa fa-fw fa-ship"></i>
-							<span class="nav-link-text"> Fournisseurs</span>
-					</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Dashboard"><a class="nav-link" ui-sref="fournisseurs">
+						<i class="fa fa-fw fa-ship"></i> <span class="nav-link-text">
+							Fournisseurs</span>
+				</a></li>
 
-					<li class="nav-item" data-toggle="tooltip" data-placement="right"
-						title="Magasins"> <a class="nav-link" ui-sref="magasins"><i class="fa fa-fw fa-shopping-cart"></i>
-							<span class="nav-link-text"> Magasins</span>
-					</a>
-						</li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Magasins"><a class="nav-link" ui-sref="magasins"><i
+						class="fa fa-fw fa-shopping-cart"></i> <span class="nav-link-text">
+							Magasins</span> </a></li>
 
-					<li class="nav-item" data-toggle="tooltip" data-placement="right"
-						title="Example Pages"><a
-						class="nav-link" ui-sref="entrepots"> <i class="fa fa-fw fa-bank"></i>
-							<span class="nav-link-text"> Entrepots</span>
-					</a>
-						</li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Example Pages"><a class="nav-link" ui-sref="entrepots">
+						<i class="fa fa-fw fa-bank"></i> <span class="nav-link-text">
+							Entrepots</span>
+				</a></li>
 
-					<li class="nav-item" data-toggle="tooltip" data-placement="right"
-						title="Link"><a class="nav-link" href="#"> <i
-							class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">
-								Plan du site</span>
-					</a></li>
-					
-					<li class="nav-item" data-toggle="tooltip" data-placement="right"
-						title="listProduits"><a class="nav-link" ui-sref="produits"> <i
-							class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">
-								Liste des produits (test)</span>
-					</a></li>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Link"><a class="nav-link" href="#"> <i
+						class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">
+							Plan du site</span>
+				</a></li>
 
-				</ul>
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="listProduits"><a class="nav-link" ui-sref="produits">
+						<i class="fa fa-fw fa-dashboard"></i> <span class="nav-link-text">
+							Liste des produits (test)</span>
+				</a></li>
 
-				<ul class="navbar-nav sidenav-toggler">
-					<li class="nav-item"><a class="nav-link text-center"
-						id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
-					</a></li>
-				</ul>
+			</ul>
 
-
-				<ul class="navbar-nav ml-auto">
+			<ul class="navbar-nav sidenav-toggler">
+				<li class="nav-item"><a class="nav-link text-center"
+					id="sidenavToggler"> <i class="fa fa-fw fa-angle-left"></i>
+				</a></li>
+			</ul>
 
 
-
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle mr-lg-2" href="#"
-						id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> <i class="fa fa-fw fa-bell"></i> <span
-							class="d-lg-none">Alerts <span
-								class="badge badge-pill badge-warning">6 non lues</span>
-						</span> <span class="new-indicator text-warning d-none d-lg-block">
-								<i class="fa fa-fw fa-circle"></i> <span class="number">6</span>
-						</span>
-					</a>
-						<div class="dropdown-menu" aria-labelledby="alertsDropdown"
-							style="right: 0">
-							<h6 class="dropdown-header">Nouvelles alertes:</h6>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#"> <span class="text-success">
-									<strong> <i class="fa fa-long-arrow-up"></i> Status
-										Update
-								</strong>
-							</span> <span class="small float-right text-muted">11:21 AM</span>
-								<div class="dropdown-message small">On s'en fout</div>
-							</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#"> <span class="text-danger">
-									<strong> <i class="fa fa-long-arrow-down"></i> Status
-										Update
-								</strong>
-							</span> <span class="small float-right text-muted">11:21 AM</span>
-								<div class="dropdown-message small">This is an automated
-									server response message. All systems are online.</div>
-							</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#"> <span class="text-success">
-									<strong> <i class="fa fa-long-arrow-up"></i> Status
-										Update
-								</strong>
-							</span> <span class="small float-right text-muted">11:21 AM</span>
-								<div class="dropdown-message small">This is an automated
-									server response message. All systems are online.</div>
-							</a>
-
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item small" href="#"> Alertes </a>
-						</div></li>
+			<ul class="navbar-nav ml-auto">
 
 
 
-					<li class="nav-item"><a class="nav-link" data-toggle="modal"
-						data-target="#exampleModal"> <i class="fa fa-fw fa-sign-out"></i>
-							Déconnexion
-					</a></li>
-				</ul>
-			</div>
-		</nav>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle mr-lg-2" href="#"
+					id="alertsDropdown" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="fa fa-fw fa-bell"></i> <span
+						class="d-lg-none">Alerts <span
+							class="badge badge-pill badge-warning">6 non lues</span>
+					</span> <span class="new-indicator text-warning d-none d-lg-block">
+							<i class="fa fa-fw fa-circle"></i> <span class="number">6</span>
+					</span>
+				</a>
+					<div class="dropdown-menu" aria-labelledby="alertsDropdown"
+						style="right: 0">
+						<h6 class="dropdown-header">Nouvelles alertes:</h6>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#"> <span class="text-success">
+								<strong> <i class="fa fa-long-arrow-up"></i> Status
+									Update
+							</strong>
+						</span> <span class="small float-right text-muted">11:21 AM</span>
+							<div class="dropdown-message small">On s'en fout</div>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#"> <span class="text-danger">
+								<strong> <i class="fa fa-long-arrow-down"></i> Status
+									Update
+							</strong>
+						</span> <span class="small float-right text-muted">11:21 AM</span>
+							<div class="dropdown-message small">This is an automated
+								server response message. All systems are online.</div>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#"> <span class="text-success">
+								<strong> <i class="fa fa-long-arrow-up"></i> Status
+									Update
+							</strong>
+						</span> <span class="small float-right text-muted">11:21 AM</span>
+							<div class="dropdown-message small">This is an automated
+								server response message. All systems are online.</div>
+						</a>
 
-		<div class="content-wrapper" >
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item small" href="#"> Alertes </a>
+					</div></li>
+
+
+
+				<li class="nav-item"><a class="nav-link" data-toggle="modal"
+					data-target="#exampleModal"> <i class="fa fa-fw fa-sign-out"></i>
+						Déconnexion
+				</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="content-wrapper">
+		<div class="container-fluid">
 			<div ui-view></div>
-			
-			<!-- /.content-wrapper -->
-			<footer class="sticky-footer">
-				<div class="container">
-					<div class="text-center">
-						<small>Copyright &copy; Dino-Team 2017</small>
-					</div>
+		</div>
+		<!-- /.content-wrapper -->
+		<footer class="sticky-footer">
+			<div class="container">
+				<div class="text-center">
+					<small>Copyright &copy; Dino-Team 2017</small>
 				</div>
-			</footer>
+			</div>
+		</footer>
 
-			<!-- Scroll to Top Button -->
-			<a class="scroll-to-top rounded" href="#page-top"> <i
-				class="fa fa-angle-up"></i>
-			</a>
+		<!-- Scroll to Top Button -->
+		<a class="scroll-to-top rounded" href="#page-top"> <i
+			class="fa fa-angle-up"></i>
+		</a>
 
-			<!-- Logout Modal -->
-			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-				aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Voulez-vous
-								vraiment vous déconnecter?</h5>
-							<button type="button" class="close" data-dismiss="modal"
-								aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">Confirmez votre déconnexion en
-							appuyant sur le bouton ci-dessous.</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-								data-dismiss="modal">Annuler</button>
-							<a class="btn btn-primary" href="login.html">Confirmer</a>
-						</div>
+		<!-- Logout Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Voulez-vous
+							vraiment vous déconnecter?</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">Confirmez votre déconnexion en
+						appuyant sur le bouton ci-dessous.</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Annuler</button>
+						<a class="btn btn-primary" href="login.html">Confirmer</a>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 
 </html>
