@@ -35,15 +35,21 @@
 						<td>{{item.mail}}</td>
 						<td>{{item.numTel}}</td>
 						<td>{{item.adresse}}</td>
-						<td><button type="nav-link" data-toggle="modal"
-								data-target="#editModal" class="btn btn-primary btn-block"
-								ng-click="selectFournisseur(item)">
-								<i class="fa fa-refresh" aria-hidden="true"></i> Modifier
-							</button>
-							<button type="submit" class="btn btn-primary btn-block"
-								ng-click="deleteFournisseur(item.idFournisseur)">
-								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
-							</button></td>
+						<td>
+							<div class="dynamicBlock">
+								<button type="nav-link" data-toggle="modal"
+									data-target="#editModal" class="btn btn-primary btn-block"
+									ng-click="selectFournisseur(item)">
+									<i class="fa fa-refresh" aria-hidden="true"></i> Modifier
+								</button>
+							</div>
+							<div class="dynamicBlock">
+								<button type="submit" class="btn btn-primary btn-block"
+									ng-click="deleteFournisseur(item.idFournisseur)">
+									<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
+								</button>
+							</div>
+						</td>
 					</tr>
 				</tbody>
 			</table>
