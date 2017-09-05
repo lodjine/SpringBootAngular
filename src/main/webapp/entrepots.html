@@ -1,7 +1,17 @@
 <div class="card mb-3" style="margin: 1.5em;">
 	<div class="card-header">
-		<i class="fa fa-file-text-o" aria-hidden="true"></i> Listes des
-		Entrep&ocircts
+		<div style="float: inline-start;">
+			<p style="font-size: x-large; margin-bottom: 0;">
+				<i class="fa fa-fw fa-table"></i>Listes des Entrep&ocircts
+			</p>
+		</div>
+		<div style="float: inline-end;">
+			<button type="nav-link" data-toggle="modal" data-target="#editModal"
+				class="btn btn-primary btn-block" ng-click="selectEntrepot()">
+				<i class="fa fa-plus-circle" aria-hidden="true"></i> Enregistrer un
+				nouvel Entrep&ocirct
+			</button>
+		</div>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
@@ -32,14 +42,6 @@
 							<button type="submit" class="btn btn-primary btn-block"
 								ng-click="deleteEntrepot(item.idBatiment)">
 								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
-							</button></td>
-					</tr>
-					<tr>
-						<td><button type="nav-link" data-toggle="modal"
-								data-target="#editModal" class="btn btn-primary btn-block"
-								ng-click="selectEntrepot()">
-								<i class="fa fa-plus-circle" aria-hidden="true"></i> Enregistrer
-								un nouvel entrep&ocirct
 							</button></td>
 					</tr>
 				</tbody>

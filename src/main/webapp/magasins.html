@@ -1,6 +1,18 @@
 <div class="card mb-3" style="margin: 1.5em;">
 	<div class="card-header">
-		<i class="fa fa-table"></i> Listes des Magasins
+		<div style="float: inline-start;">
+			<p style="font-size: x-large; margin-bottom: 0;">
+				<i class="fa fa-fw fa-table"></i>Listes des Magasins
+			</p>
+		</div>
+		<div style="float: inline-end;">
+			<button type="nav-link" data-toggle="modal"
+				data-target="#exampleModal" class="btn btn-primary btn-block"
+				ng-click="selectMagasin()">
+				<i class="fa fa-plus-circle" aria-hidden="true"></i> Enregistrer un
+				nouveau Magasin
+			</button>
+		</div>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
@@ -8,10 +20,11 @@
 				cellspacing="0">
 				<thead>
 					<tr>
-						<th style="min-width: 80px;">Nom du magasin</th>
-						<th style="min-width: 80px;">Adresse</th>
-						<th style="min-width: 80px;">Secteur</th>
-						<th style="min-width: 80px;">Groupe</th>
+						<th>Nom du magasin</th>
+						<th>Adresse</th>
+						<th>Secteur</th>
+						<th>Groupe</th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -23,19 +36,16 @@
 						<td><button type="nav-link" data-toggle="modal"
 								data-target="#editModal" class="btn btn-primary btn-block"
 								ng-click="selectMagasin(item)">
-								<i class="fa fa-refresh" aria-hidden="true"></i>Modifier</button></td>
-						<td><button type="submit" class="btn btn-primary btn-block"
+								<i class="fa fa-refresh" aria-hidden="true"></i>Modifier
+							</button>
+							<button type="submit" class="btn btn-primary btn-block"
 								ng-click="deleteMagasin(item.idBatiment)">
 								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
 							</button></td>
 					</tr>
 				</tbody>
 			</table>
-			<button type="nav-link" data-toggle="modal"
-								data-target="#exampleModal" class="btn btn-primary btn-block"
-								ng-click="selectMagasin()"><i class="fa fa-plus-circle" aria-hidden="true"></i>
-								Enregistrer un nouveau
-								magasin</button>
+
 		</div>
 	</div>
 
@@ -46,74 +56,73 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="editModalLabel">Editer Magasin</h5>
-				</button>
+					</button>
 				</div>
 				<div class="modal-body">
 					<div class="card-body">
-					
-				<form>
-					<div class="form-group">
-						<div class="form-group">
-								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputNom">Nom Magasin</label> <input
-											type="text" class="form-control" id="inputNom"
-											aria-describedby="nameHelp"
-											placeholder="Entrer Nom du magasin"
-											ng-model="magasinDialog.nomBatiment">
+
+						<form>
+							<div class="form-group">
+								<div class="form-group">
+									<div class="form-row">
+										<div class="col-md-6">
+											<label for="inputNom">Nom Magasin</label> <input type="text"
+												class="form-control" id="inputNom"
+												aria-describedby="nameHelp"
+												placeholder="Entrer Nom du magasin"
+												ng-model="magasinDialog.nomBatiment">
+										</div>
 									</div>
 								</div>
-							</div>
-						<div class="form-group">
-								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputNom">Adresse</label> <input
-											type="text" class="form-control" id="inputAdresse"
-											aria-describedby="nameHelp"
-											placeholder="Entrer l'adresse du magasin"
-											ng-model="magasinDialog.adresse">
+								<div class="form-group">
+									<div class="form-row">
+										<div class="col-md-6">
+											<label for="inputNom">Adresse</label> <input type="text"
+												class="form-control" id="inputAdresse"
+												aria-describedby="nameHelp"
+												placeholder="Entrer l'adresse du magasin"
+												ng-model="magasinDialog.adresse">
+										</div>
 									</div>
 								</div>
-							</div>
-						<div class="form-group">
-								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputNom">Secteur</label> <input
-											type="text" class="form-control" id="inputSecteur"
-											aria-describedby="nameHelp"
-											placeholder="Entrer le secteur"
-											ng-model="magasinDialog.secteur">
+								<div class="form-group">
+									<div class="form-row">
+										<div class="col-md-6">
+											<label for="inputNom">Secteur</label> <input type="text"
+												class="form-control" id="inputSecteur"
+												aria-describedby="nameHelp" placeholder="Entrer le secteur"
+												ng-model="magasinDialog.secteur">
+										</div>
 									</div>
 								</div>
-							</div>
-						<div class="form-group">
-								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputNom">Groupe</label> <input
-											type="text" class="form-control" id="inputGroupe"
-											aria-describedby="nameHelp"
-											placeholder="Entrer le groupe"
-											ng-model="magasinDialog.groupe">
+								<div class="form-group">
+									<div class="form-row">
+										<div class="col-md-6">
+											<label for="inputNom">Groupe</label> <input type="text"
+												class="form-control" id="inputGroupe"
+												aria-describedby="nameHelp" placeholder="Entrer le groupe"
+												ng-model="magasinDialog.groupe">
+										</div>
 									</div>
 								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-dismiss="modal">
+										<i class="fa fa-times" aria-hidden="true"></i> Annuler
+									</button>
+									<button type="button" class="btn btn-primary"
+										data-dismiss="modal"
+										ng-click="updateFournisseur(fournisseurDialog)">
+										<i class="fa fa-check" aria-hidden="true"></i> Confirmer
+									</button>
+								</div>
+
 							</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary"
-						data-dismiss="modal">
-						<i class="fa fa-times" aria-hidden="true"></i> Annuler
-					</button>
-							<button type="button" class="btn btn-primary" data-dismiss="modal"
-						ng-click="updateFournisseur(fournisseurDialog)">
-						<i class="fa fa-check" aria-hidden="true"></i> Confirmer
-					</button>
-						</div>
-						
+						</form>
 					</div>
-				</form>
 				</div>
 			</div>
 		</div>
+
+
 	</div>
-
-
-</div>

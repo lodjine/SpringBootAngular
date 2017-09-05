@@ -1,54 +1,61 @@
-
 <div class="card mb-3" style="margin: 1.5em;">
 	<div class="card-header">
-		<i class="fa fa-file-text-o"></i> Listes des Produits
-	</div>
-	<div class="card-body">
-		<div class="table-responsive">
-			<table class="table table-bordered" width="100%" id="dataTable"
-				cellspacing="0">
-				<thead>
-					<tr>
-						<th>Nom</th>
-						<th>prix vente</th>
-						<th>descriptif</th>
-						<th>marque</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="produit in produits">
-						<td>{{ produit.nomProduit }}</td>
-						<td>{{ produit.prixVente }}</td>
-						<td>{{ produit.descriptif }}</td>
-						<td>{{ produit.marque }}</td>
-						<td>
-							<button type="nav-link" class="btn btn-primary btn-block" data-toggle="modal"
-								data-target="#editModal" ng-click="selectProduit(produit)">
-								<i class="fa fa-refresh" aria-hidden="true"></i> Modifier</button>
-							<button class="btn btn-primary btn-block" type="nav-link"
-								ng-click="deleteProduit(produit.idProduit)">
-								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer</button>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<button data-toggle="modal" data-target="#editModal" type="nav-link" class="btn btn-primary btn-block" ng-click="selectProduit()">
-								<i class="fa fa-plus-circle" aria-hidden="true"></i> Creer Produit</button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+		<div style="float: inline-start;">
+			<p style="font-size: x-large; margin-bottom: 0;">
+				<i class="fa fa-fw fa-table"></i>Listes des Produits
+			</p>
 		</div>
-	</div>
+		<div style="float: inline-end;">
+			<button data-toggle="modal" data-target="#editModal" type="nav-link"
+				class="btn btn-primary btn-block" ng-click="selectProduit()">
+				<i class="fa fa-plus-circle" aria-hidden="true"></i> Enregistrer un nouveau Produit
+			</button>
+		</div>
+		</div>
+		<div class="card-body">
+			<div class="table-responsive">
+				<table class="table table-bordered" width="100%" id="dataTable"
+					cellspacing="0">
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Prix vente (&euro;)</th>
+							<th>Descriptif</th>
+							<th>Marque</th>
+						<th>Actions</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="produit in produits">
+							<td>{{ produit.nomProduit }}</td>
+							<td>{{ produit.prixVente }}</td>
+							<td>{{ produit.descriptif }}</td>
+							<td>{{ produit.marque }}</td>
+							<td>
+								<button type="nav-link" class="btn btn-primary btn-block"
+									data-toggle="modal" data-target="#editModal"
+									ng-click="selectProduit(produit)">
+									<i class="fa fa-refresh" aria-hidden="true"></i> Modifier
+								</button>
+								<button class="btn btn-primary btn-block" type="nav-link"
+									ng-click="deleteProduit(produit.idProduit)">
+									<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 
 
-	<!-- update Modal -->
-	<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
-		aria-labelledby="editModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="editModalLabel">Editer Produit</h5>
+		<!-- update Modal -->
+		<div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+			aria-labelledby="editModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="editModalLabel">Editer Produit</h5>
 					</div>
 					<form>
 						<div class="form-group">
@@ -74,14 +81,18 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary"
-									data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i>Annuler</button>
-								<a class="btn btn-primary" data-dismiss="modal" ng-click="updateProduit(produitDialog)"><i class="fa fa-check" aria-hidden="true"></i>Confirmer</a>
+									data-dismiss="modal">
+									<i class="fa fa-times" aria-hidden="true"></i>Annuler
+								</button>
+								<a class="btn btn-primary" data-dismiss="modal"
+									ng-click="updateProduit(produitDialog)"><i
+									class="fa fa-check" aria-hidden="true"></i>Confirmer</a>
 							</div>
 						</div>
 					</form>
-				
+
+				</div>
 			</div>
 		</div>
+
 	</div>
-	
-</div>
