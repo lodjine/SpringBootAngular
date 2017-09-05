@@ -7,8 +7,8 @@ magasinListController.$inject = ['$scope','magasinService'];
 		$scope.magasins=magasinService.query();
 		$scope.magasinDialog={};
 			
-		$scope.deleteMagasin=function deleteMagasin(id) {
-			magasinService.delete({id:id}, function(result){
+		$scope.deleteMagasin = function(idMagasin) {
+			magasinService.delete({id:idMagasin}, function(result){
 				$state.reload();
 				})	
 		}

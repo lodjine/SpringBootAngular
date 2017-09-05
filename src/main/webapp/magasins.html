@@ -21,11 +21,11 @@
 						<td>{{ item.secteur }}</td>
 						<td>{{ item.groupe }}</td>
 						<td><button type="nav-link" data-toggle="modal"
-								data-target="#exampleModal" class="btn btn-primary btn-block"
+								data-target="#editModal" class="btn btn-primary btn-block"
 								ng-click="selectMagasin(item)">
 								<i class="fa fa-refresh" aria-hidden="true"></i>Modifier</button></td>
 						<td><button type="submit" class="btn btn-primary btn-block"
-								ng-click="deleteMagasin(item.idMagasin)">
+								ng-click="deleteMagasin(item.idBatiment)">
 								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
 							</button></td>
 					</tr>
@@ -35,7 +35,7 @@
 								data-target="#exampleModal" class="btn btn-primary btn-block"
 								ng-click="selectMagasin()"><i class="fa fa-plus-circle" aria-hidden="true"></i>
 								Enregistrer un nouveau
-								fournisseur</button>
+								magasin</button>
 		</div>
 	</div>
 
@@ -107,8 +107,10 @@
 						<i class="fa fa-check" aria-hidden="true"></i> Confirmer
 					</button>
 						</div>
+						
 					</div>
 				</form>
+				</div>
 			</div>
 		</div>
 	</div>
