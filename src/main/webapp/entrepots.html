@@ -1,7 +1,7 @@
 <div class="card mb-3" style="margin: 1.5em;">
 	<div class="card-header">
 		<i class="fa fa-file-text-o" aria-hidden="true"></i> Listes des
-		Entrepôts
+		Entrep&ocircts
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
@@ -9,11 +9,11 @@
 				cellspacing="0">
 				<thead>
 					<tr>
-						<th>Nom de l'entrepôt</th>
+						<th>Nom de l'entrep&ocirct</th>
 						<th>Adresse</th>
 						<th>Secteur</th>
 						<th>Groupe</th>
-						<th>Capacité</th>
+						<th>Capacit&eacute</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -30,7 +30,7 @@
 								<i class="fa fa-refresh" aria-hidden="true"></i> Modifier
 							</button>
 							<button type="submit" class="btn btn-primary btn-block"
-								ng-click="deleteEntrepot(item.idEntrepot)">
+								ng-click="deleteEntrepot(item.idBatiment)">
 								<i class="fa fa-times-circle" aria-hidden="true"></i> Supprimer
 							</button></td>
 					</tr>
@@ -39,7 +39,7 @@
 								data-target="#exampleModal" class="btn btn-primary btn-block"
 								ng-click="selectEntrepot()">
 								<i class="fa fa-plus-circle" aria-hidden="true"></i> Enregistrer
-								un nouvel entrepôt
+								un nouvel entrep&ocirct
 							</button></td>
 					</tr>
 				</tbody>
@@ -53,7 +53,8 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Editer Entrepôt</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Editer
+						Entrep&ocirct</h5>
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
@@ -65,52 +66,42 @@
 						<form>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputNom">Nom Entrepôt</label> <input type="text"
-											class="form-control" id="inputNom"
-											placeholder="Entrer le nom de l'entrepôt"
-											ng-model="entrepotDialog.nomBatiment">
-									</div>
+									<label for="inputNom">Nom Entrep&ocirct</label> <input
+										type="text" class="form-control" id="inputNom"
+										placeholder="Entrer le nom de l'entrepot"
+										ng-model="entrepotDialog.nomBatiment">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputAdresse">Adresse</label> <input type="text"
-											class="form-control" id="inputAdresse"
-											placeholder="Entrer l'adresse"
-											ng-model="entrepotDialog.adresse">
-									</div>
+									<label for="inputAdresse">Adresse</label> <input type="text"
+										class="form-control" id="inputAdresse"
+										placeholder="Entrer l'adresse"
+										ng-model="entrepotDialog.adresse">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputSecteur">Secteur</label> <input type="text"
-											class="form-control" id="inputSecteur"
-											placeholder="Entrer le secteur"
-											ng-model="entrepotDialog.secteur">
-									</div>
+									<label for="inputSecteur">Secteur</label> <input type="text"
+										class="form-control" id="inputSecteur"
+										placeholder="Entrer le secteur"
+										ng-model="entrepotDialog.secteur">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputGroupe">Groupe</label> <input
-											type="text" class="form-control" id="inputGroupe"
-											placeholder="Entrer le groupe"
-											ng-model="entrepotDialog.groupe">
-									</div>
+									<label for="inputGroupe">Groupe</label> <input type="text"
+										class="form-control" id="inputGroupe"
+										placeholder="Entrer le groupe"
+										ng-model="entrepotDialog.groupe">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputCapacite">Capacité</label> <input type="text"
-											class="form-control" id="inputCapacite"
-											placeholder="Entrer la capacité"
-											ng-model="entrepotDialog.capacite">
-									</div>
+									<label for="inputCapacite">Capacit&eacute</label> <input
+										type="text" class="form-control" id="inputCapacite"
+										placeholder="Entrer la capacit&eacute"
+										ng-model="entrepotDialog.capacite">
 								</div>
 							</div>
 						</form>
