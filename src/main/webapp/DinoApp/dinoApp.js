@@ -35,5 +35,11 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		url : '/dinoTeam',
 		templateUrl : 'dinoTeam.html',
 	})
+	
+	.state('template', {
+		url : '/accueil',
+		templateUrl : 'accueil.html',
+		controller : 'templateController'
+	})
 });
 
