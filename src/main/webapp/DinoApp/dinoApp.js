@@ -25,4 +25,10 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl : 'entrepots.html',
 		controller : 'entrepotListController'
 	})
+	
+	.state('home', {
+		url : '/home',
+		templateUrl : 'home.html',
+		
+	})
 });
