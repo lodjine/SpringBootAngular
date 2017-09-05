@@ -24,7 +24,7 @@
 						<th>Courriel du contact</th>
 						<th>Num&eacute;ro de t&eacute;l&eacute;phone du contact</th>
 						<th>Adresse de l'entreprise</th>
-						<th>Actions</th>
+						<th class="actionButton">Actions</th>
 					</tr>
 				</thead>
 
@@ -75,46 +75,35 @@
 						<form>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputNom">Nom Entreprise</label> <input
-											type="text" class="form-control" id="inputNom"
-											aria-describedby="nameHelp"
-											placeholder="Entrer nom entreprise"
-											ng-model="fournisseurDialog.nomEntreprise">
-									</div>
+									<label for="inputNom">Nom Entreprise</label> <input type="text"
+										class="form-control" id="inputNom" aria-describedby="nameHelp"
+										placeholder="Entrer nom entreprise"
+										ng-model="fournisseurDialog.nomEntreprise">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputContact">Nom contact</label> <input
-											type="text" class="form-control" id="inputContact"
-											aria-describedby="nameHelp" placeholder="Entrer nom contact"
-											ng-model="fournisseurDialog.nomResponsable">
-									</div>
-									<div class="col-md-6">
-										<label for="inputEmail">Adresse mail</label> <input
-											type="email" class="form-control" id="inputEmail"
-											aria-describedby="emailHelp" placeholder="Entrer courriel"
-											ng-model="fournisseurDialog.mail">
-									</div>
+									<label for="inputContact">Nom contact</label> <input
+										type="text" class="form-control" id="inputContact"
+										aria-describedby="nameHelp" placeholder="Entrer nom contact"
+										ng-model="fournisseurDialog.nomResponsable"> <label
+										for="inputEmail">Adresse mail</label> <input type="email"
+										class="form-control" id="inputEmail"
+										aria-describedby="emailHelp" placeholder="Entrer courriel"
+										ng-model="fournisseurDialog.mail">
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="form-row">
-									<div class="col-md-6">
-										<label for="inputNumTelephone">Num&eacute;ro
-											t&eacute;l&eacute;phone</label> <input type="text"
-											class="form-control" id="inputNumTelephone"
-											placeholder="Entrer numero telephone"
-											ng-model="fournisseurDialog.numTel">
-									</div>
-									<div class="col-md-6">
-										<label for="inputAdresse">Adresse postale</label> <input
-											type="text" class="form-control" id="inputAdresse"
-											placeholder="Entrer adresse fournisseur"
-											ng-model="fournisseurDialog.adresse">
-									</div>
+									<label for="inputNumTelephone">Num&eacute;ro
+										t&eacute;l&eacute;phone</label> <input type="text"
+										class="form-control" id="inputNumTelephone"
+										placeholder="Entrer numero telephone"
+										ng-model="fournisseurDialog.numTel"> <label
+										for="inputAdresse">Adresse postale</label> <input type="text"
+										class="form-control" id="inputAdresse"
+										placeholder="Entrer adresse fournisseur"
+										ng-model="fournisseurDialog.adresse">
 								</div>
 							</div>
 						</form>
