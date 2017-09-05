@@ -46,5 +46,9 @@ public class UserWService {
 		return true;
 	}
 	
+	@RequestMapping(value="/userByLogin/{log}", method=RequestMethod.GET)
+	public User getByLogin(@PathVariable String log,String pw){
+		return userDao.userParLogin(log,pw);
+	}
 
 }

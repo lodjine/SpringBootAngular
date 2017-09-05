@@ -1,16 +1,25 @@
 
-var loginApp = angular.module('loginApp');
+angular.module("loginApp").controller('loginCtrl', loginCtrl);
 
-loginApp.controller('loginCtrl', function($scope,$window) {
-   
-	$scope.loginFct=function() {
-		if($scope.login=="admin"&& $scope.password=="admin"){
-			$window.location.href = '/accueil.html';
-		}else{
+loginCtrl.$inject= ['$scope', '$rootScope', '$state','loginService', '$stateParams', '$window' ];
+
+		function loginCtrl($scope,$rootScope,$state, loginService, $stateParams, $window) {
 			
-			$scope.message="login et/ou password erroné!";
-		}
-	}
-	
-	
-});
+			$scope.selectUser=function selectUser() {
+				var login=$scope.login;
+				var mp=$scope.password;
+				$rootScope.connectedUser=loginService.getByLogin({log:login},{pw:mp});		
+				var user=$rootScope.connectedUser;
+				
+				if(user!=null){
+					$window.location.href = '/accueil.html#/home';
+				}
+				else{
+					$scope.message="erreur";
+				}
+				
+			}
+			
+
+			
+		};

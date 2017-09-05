@@ -1,5 +1,5 @@
 // app.js
-var loginApp = angular.module('loginApp', ['ui.router']);
+var loginApp = angular.module('loginApp', ['ui.router','ngResource']);
 
 loginApp.config(function($stateProvider, $urlRouterProvider) {
 
@@ -9,10 +9,6 @@ loginApp.config(function($stateProvider, $urlRouterProvider) {
             url: '/login',
             templateUrl: 'index.html',
 			controller: 'loginCtrl'
-        }).state('accueil', {
-            url: '/accueil',
-            templateUrl: 'accueil.html',
-			
-        });
+        })
 
 });
