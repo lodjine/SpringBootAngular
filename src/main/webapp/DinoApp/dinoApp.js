@@ -36,4 +36,4 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
 		templateUrl : 'dinoTeam.html',
 	})
 });
-});
+
