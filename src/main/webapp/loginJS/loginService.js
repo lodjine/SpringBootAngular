@@ -13,7 +13,13 @@
 				method : 'GET',
 				isArray : false,
 				url : '/userByLogin/:log/:pw'
-			}
+			},
+		'checkLogMp' : {
+			method : 'GET',
+			isArray : false,
+			url : '/checkLogMp/:log/:pw'
+		}
+		
 
 		});
 

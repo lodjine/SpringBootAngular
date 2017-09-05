@@ -8,15 +8,18 @@ loginCtrl.$inject= ['$scope', '$rootScope', '$state','loginService', '$statePara
 			$scope.selectUser=function selectUser() {
 				var login=$scope.login;
 				var mp=$scope.password;
-				$rootScope.connectedUser=loginService.getByLogin({log:login},{pw:mp});		
-				var user=$rootScope.connectedUser;
+				$scope.user=loginService.getByLogin({log:login,pw:mp});
+				$scope.users=loginService.query();
 				
-				if(user!=null){
-					$window.location.href = '/accueil.html#/home';
+				
+				
+				
+				for(key in $scope.users) {
+				    var obj = $scope.users[key];
+				    alert(obj)	;			 
 				}
-				else{
-					$scope.message="erreur";
-				}
+				
+				
 				
 			}
 			

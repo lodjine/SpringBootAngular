@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.adaming.springbootangular.dao.IUserDao;
@@ -46,9 +47,21 @@ public class UserWService {
 		return true;
 	}
 	
-	@RequestMapping(value="/userByLogin/{log}", method=RequestMethod.GET)
-	public User getByLogin(@PathVariable String log,String pw){
-		return userDao.userParLogin(log,pw);
+	@RequestMapping(value="/userByLogin/{log}/{pw}", method=RequestMethod.GET)
+	@ResponseBody
+	public User getByLoginAndMp(@PathVariable String log, @PathVariable String pw){
+		User user = userDao.userParLogin(log,pw);
+		if (user == null)
+			return null;
+		return user;
+	}
+	
+	@RequestMapping(value="/checkLogMp/{log}/{pw}", method=RequestMethod.GET)
+	public  boolean checkLoginMp(@PathVariable String log, @PathVariable String pw){
+		User user = userDao.userParLogin(log,pw);
+		if (user == null)
+			return false;
+		return true;
 	}
 
 }
