@@ -71,7 +71,6 @@
 				</div>
 				<div class="modal-body">
 					<div class="card-body">
-
 						<form>
 							<div class="form-group">
 								<div class="form-row">
@@ -86,9 +85,13 @@
 									<label for="inputContact">Nom contact</label> <input
 										type="text" class="form-control" id="inputContact"
 										aria-describedby="nameHelp" placeholder="Entrer nom contact"
-										ng-model="fournisseurDialog.nomResponsable"> <label
-										for="inputEmail">Adresse mail</label> <input type="email"
-										class="form-control" id="inputEmail"
+										ng-model="fournisseurDialog.nomResponsable">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<label for="inputEmail">Adresse mail</label> <input
+										type="email" class="form-control" id="inputEmail"
 										aria-describedby="emailHelp" placeholder="Entrer courriel"
 										ng-model="fournisseurDialog.mail">
 								</div>
@@ -99,18 +102,21 @@
 										t&eacute;l&eacute;phone</label> <input type="text"
 										class="form-control" id="inputNumTelephone"
 										placeholder="Entrer numero telephone"
-										ng-model="fournisseurDialog.numTel"> <label
-										for="inputAdresse">Adresse postale</label> <input type="text"
-										class="form-control" id="inputAdresse"
+										ng-model="fournisseurDialog.numTel">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<label for="inputAdresse">Adresse postale</label> <input
+										type="text" class="form-control" id="inputAdresse"
+										aria-describedby="nameHelp"
 										placeholder="Entrer adresse fournisseur"
 										ng-model="fournisseurDialog.adresse">
 								</div>
 							</div>
 						</form>
 					</div>
-
 				</div>
-
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary"
 						data-dismiss="modal">
@@ -124,5 +130,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>

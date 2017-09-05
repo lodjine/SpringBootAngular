@@ -75,48 +75,46 @@
 										ng-model="produitDialog.nomProduit"
 										placeholder="Entrer nom produit">
 								</div>
-								<div class="form-group">
-									<div class="form-row">
-										<label for="inputPrixVenteProduit">Prix de vente</label> <input
-											type="text" class="form-control" id="inputPrixVenteProduit"
-											aria-describedby="nameHelp"
-											ng-model="produitDialog.prixVente"
-											placeholder="Entrer Prix vente">
-									</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<label for="inputPrixVenteProduit">Prix de vente</label> <input
+										type="text" class="form-control" id="inputPrixVenteProduit"
+										aria-describedby="nameHelp" ng-model="produitDialog.prixVente"
+										placeholder="Entrer Prix vente">
 								</div>
-								<div class="form-group">
-									<div class="form-row">
-										<label for="inputDescriptifProduit">Descriptif</label> <input
-											type="text" class="form-control" id="inputDescriptifProduit"
-											aria-describedby="nameHelp"
-											ng-model="produitDialog.descriptif"
-											placeholder="Entrer descriptif">
-									</div>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<label for="inputDescriptifProduit">Descriptif</label> <input
+										type="text" class="form-control" id="inputDescriptifProduit"
+										aria-describedby="nameHelp"
+										ng-model="produitDialog.descriptif"
+										placeholder="Entrer descriptif">
 								</div>
-								<div class="form-group">
-									<div class="form-row">
-										<label for="inputMarqueProduit">Marque</label> <input
-											type="text" class="form-control" id="inputMarqueProduit"
-											aria-describedby="nameHelp" ng-model="produitDialog.marque"
-											placeholder="Entrer marque">
-									</div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary"
-										data-dismiss="modal">
-										<i class="fa fa-times" aria-hidden="true"></i> Annuler
-									</button>
-									<button class="btn btn-primary" data-dismiss="modal"
-										ng-click="updateProduit(produitDialog)">
-										<i class="fa fa-check" aria-hidden="true"></i> Confirmer
-									</button>
+							</div>
+							<div class="form-group">
+								<div class="form-row">
+									<label for="inputMarqueProduit">Marque</label> <input
+										type="text" class="form-control" id="inputMarqueProduit"
+										aria-describedby="nameHelp" ng-model="produitDialog.marque"
+										placeholder="Entrer marque">
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">
+						<i class="fa fa-times" aria-hidden="true"></i> Annuler
+					</button>
+					<button class="btn btn-primary" data-dismiss="modal"
+						ng-click="updateProduit(produitDialog)">
+						<i class="fa fa-check" aria-hidden="true"></i> Confirmer
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
-
 </div>
