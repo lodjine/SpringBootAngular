@@ -7,3 +7,8 @@
 .actionButton{
 	width: 18%;
 }
+
+.unclickable:hover{
+	text-decoration: none;
+	cursor:default;
+}
