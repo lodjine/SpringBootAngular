@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 (function() {
 	'use strict';
 	angular.module('loginApp').factory('loginService', loginService);
@@ -23,6 +32,10 @@
 			isArray : false,
 			url : '/checkLogMp/:log/:pw'
 		}
+			
+			
+			 
+
 		
 
 		});
@@ -30,5 +43,3 @@
 	}
 
 })();
-
-

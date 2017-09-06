@@ -54,9 +54,15 @@
               <label for="exampleInputPassword1">Mot de passe</label>
               <input type="password" ng-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <button class="btn btn-primary btn-block"  type="submit" ng-click="selectUser()">Se connecter</button>
+            <button class="btn btn-primary btn-block"  type="submit" ng-click="selectUser()" onclick="verifuser()" >Se connecter</button>
         </div>
       </div>
+      
+      
+      
+                   {{userJ.pseudo}}
+      
+      
       </form>
     </div>
 
@@ -64,6 +70,20 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!-- <script> -->
+// function verifuser(){
+// var pseudo = {{userJ.pseudo}} ;
+// 	if (  pseudo !=null){
+// 		window.location.replace("localhost:8086/accueil.html#/home");
+// 	}
+		
+	
+// }
+
+
+<!-- </script> -->
 
   </body>
 
